@@ -1,6 +1,10 @@
+# Solution Items
+SummerProject.sln
+SummerProject.v11.suo
+
 # Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
-bin
-obj
+SummerProject/bin
+SummerProject/obj
 
 # mstest test results
-TestResults
+SummerProject/TestResults
