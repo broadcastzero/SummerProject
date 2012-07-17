@@ -1,0 +1,56 @@
+<mockup version="1.0" skin="sketch" measuredW="349" measuredH="526" mockupW="282" mockupH="510">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::iPhone" x="67" y="16" w="-1" h="-1" measuredW="282" measuredH="510" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bgPattern>allWhite</bgPattern>
+        <bgTransparent>true</bgTransparent>
+        <orientation>portrait</orientation>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Icon" x="130" y="132" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>3700253</color>
+        <icon>PlusBigIcon%7Clarge</icon>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Icon" x="223" y="132" w="-1" h="-1" measuredW="48" measuredH="48" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13369344</color>
+        <icon>DashIcon%7Clarge</icon>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::TextInput" x="130" y="225" w="156" h="-1" measuredW="38" measuredH="27" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>right</align>
+        <text>300</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::TextInput" x="130" y="289" w="156" h="-1" measuredW="56" measuredH="27" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <align>right</align>
+        <text>Schuhe</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::ComboBox" x="130" y="356" w="156" h="-1" measuredW="78" measuredH="23" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <state>closed</state>
+        <text>Nahrung%0AGesch%E4ft</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="130" y="335" w="-1" h="-1" measuredW="61" measuredH="21" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Category</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Label" x="130" y="204" w="-1" h="-1" measuredW="55" measuredH="21" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Amount*</text>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::Label" x="130" y="268" w="-1" h="-1" measuredW="69" measuredH="21" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Description</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
