@@ -8,3 +8,9 @@ SummerProject/obj
 
 # mstest test results
 SummerProject/TestResults
+
+# WP7
+WP7/SummerProjectWp7.sln
+WP7/SummerProjectWp7.suo
+WP7/SummerProjectWp7/Bin
+WP7/SummerProjectWp7/obj
