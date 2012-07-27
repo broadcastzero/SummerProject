@@ -19,7 +19,12 @@ namespace SummerProjectWp7
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        private static bool minusToggled = true;
+        /// <summary>
+        /// This bool var is used for deciding whether the add or the minus button shall be toggled.
+        /// Set to false, if "Add"-button shall be toggled at the beginning.
+        /// Note: Exclude this to config file later!
+        /// </summary>
+        private static bool minusToggled = false;
 
         /*
          * Image resources for toggling the buttons
@@ -44,6 +49,19 @@ namespace SummerProjectWp7
             // Set the data context of the listbox control to the sample data
             DataContext = App.ViewModel;
             this.Loaded += new RoutedEventHandler(MainPage_Loaded);
+        }
+
+        // Logic which is run when user navigates to MainPage
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            // in case that HomeScreen shall be shown with minus toggled first, change images
+            if (MainPage.minusToggled)
+            {
+                this.addImg.Source = this.unsetAdd;
+                this.minusImg.Source = this.setMinus;
+            }
         }
 
         // Load data for the ViewModel Items

@@ -26,10 +26,10 @@
                 <StackPanel>
                     <StackPanel Name="buttonPanel" Orientation="Horizontal" HorizontalAlignment="Center">
                         <Button Name="addButton" HorizontalAlignment="Left" Height="120" Width="120" Click="Toggle">
-                            <Image Name="addImg" Source="Images/Add_untoggled.png" />
+                            <Image Name="addImg" Source="Images/Add.png" />
                         </Button>
                         <Button Name="minusButton" HorizontalAlignment="Right" Height="120" Width="120" Click="Toggle">
-                            <Image Name="minusImg" Source="Images/Minus.png" />
+                            <Image Name="minusImg" Source="Images/Minus_untoggled.png" />
                         </Button>
                     </StackPanel>
                 </StackPanel>
