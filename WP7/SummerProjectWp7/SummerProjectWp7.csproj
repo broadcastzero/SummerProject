@@ -94,6 +94,10 @@
     <Content Include="Background.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Add.png" />
+    <Content Include="Images\Minus.png" />
+    <Content Include="Images\Add_untoggled.png" />
+    <Content Include="Images\Minus_untoggled.png" />
     <Content Include="SplashScreenImage.jpg" />
   </ItemGroup>
   <ItemGroup>

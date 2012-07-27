@@ -11,11 +11,31 @@ using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using Microsoft.Phone.Controls;
 using System.Windows.Navigation;
+using System.Windows.Controls.Primitives;
+using System.Diagnostics;
+using System.Windows.Media.Imaging;
 
 namespace SummerProjectWp7
 {
     public partial class MainPage : PhoneApplicationPage
     {
+        private static bool minusToggled = true;
+
+        /*
+         * Image resources for toggling the buttons
+         */
+        BitmapImage setAdd = new BitmapImage(
+                    new Uri("/Images/Add.png", UriKind.Relative));
+
+        BitmapImage setMinus = new BitmapImage(
+                    new Uri("/Images/Minus.png", UriKind.Relative));
+
+        BitmapImage unsetAdd = new BitmapImage(
+            new Uri("/Images/Add_untoggled.png", UriKind.Relative));        
+
+        BitmapImage unsetMinus = new BitmapImage(
+            new Uri("/Images/Minus_untoggled.png", UriKind.Relative));
+
         // Constructor
         public MainPage()
         {
@@ -32,6 +52,38 @@ namespace SummerProjectWp7
             if (!App.ViewModel.IsDataLoaded)
             {
                 App.ViewModel.LoadData();
+            }
+        }
+
+        /// <summary>
+        /// Toggles the toggleButtons with a little help of a static bool var.
+        /// Checks the static var and toggles if needed.
+        /// </summary>
+        /// <param name="sender">The sending toggleButton</param>
+        /// <param name="e">Routed event args which contain the original sender</param>
+        private void Toggle(object sender, RoutedEventArgs e)
+        {
+            // toggle add button, untoggle minus button
+            if (MainPage.minusToggled && (sender as Button).Name == "addButton")
+            {
+                this.addImg.Source = null;
+                this.addImg.Source = setAdd;
+
+                this.minusImg.Source = null;
+                this.minusImg.Source = this.unsetMinus;
+
+                MainPage.minusToggled = false;
+            }
+            // toggle minus button
+            else if (!MainPage.minusToggled && (sender as Button).Name == "minusButton")
+            {
+                this.addImg.Source = null;
+                this.addImg.Source = unsetAdd;
+
+                this.minusImg.Source = null;
+                this.minusImg.Source = setMinus;
+
+                MainPage.minusToggled = true;
             }
         }
     }
