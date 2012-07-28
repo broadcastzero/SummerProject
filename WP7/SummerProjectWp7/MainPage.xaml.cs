@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Controls.Primitives;
 using System.Diagnostics;
 using System.Windows.Media.Imaging;
+using System.Text.RegularExpressions;
 
 namespace SummerProjectWp7
 {
@@ -102,6 +103,28 @@ namespace SummerProjectWp7
                 this.minusImg.Source = setMinus;
 
                 MainPage.minusToggled = true;
+            }
+        }
+
+        /// <summary>
+        /// Checks if amount input textbox is a valid decimal number everytime a button is pressed
+        /// (must contain not more than one dot and not more than two numbers after point).
+        /// </summary>
+        /// <param name="sender">The sending textbox</param>
+        /// <param name="e">The KeyEventArgs</param>
+        private void ValidateAmountInput(object sender, KeyEventArgs e)
+        {
+            TextBox tbx = (sender as TextBox);
+
+            // do not allow more than one dot
+            if (tbx.Text.Contains('.') && e.PlatformKeyCode == 190)
+            {
+                e.Handled = true;
+            }
+            // do not allow more than two numbers after dot
+            else if(tbx.Text.Contains('.') && (tbx.Text.Length - tbx.Text.IndexOf('.')) > 2)
+            {
+               e.Handled = true;
             }
         }
     }

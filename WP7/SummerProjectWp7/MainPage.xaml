@@ -23,7 +23,9 @@
             <!--Pivot item one-->
             <controls:PivotItem Header="Eingabe">
                 <!--StackPanel which contains all needed controls for input-->
-                <StackPanel>
+                <StackPanel HorizontalAlignment="Center">
+                    
+                    <!--Stack Panel for ToggleButtons-->
                     <StackPanel Name="buttonPanel" Orientation="Horizontal" HorizontalAlignment="Center">
                         <Button Name="addButton" HorizontalAlignment="Left" Height="120" Width="120" Click="Toggle">
                             <Image Name="addImg" Source="Images/Add.png" />
@@ -31,6 +33,12 @@
                         <Button Name="minusButton" HorizontalAlignment="Right" Height="120" Width="120" Click="Toggle">
                             <Image Name="minusImg" Source="Images/Minus_untoggled.png" />
                         </Button>
+                    </StackPanel>
+                    
+                    <!--Stack Panel for Amount-->
+                    <StackPanel Name="amountPanel" Orientation="Vertical" Margin="0, 20, 0, 0">
+                        <TextBlock HorizontalAlignment="Center">Amount*</TextBlock>
+                        <TextBox Name="amountTextBox" InputScope="Number" KeyDown="ValidateAmountInput" />
                     </StackPanel>
                 </StackPanel>
             </controls:PivotItem>
