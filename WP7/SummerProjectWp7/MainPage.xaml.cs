@@ -1,23 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
-using Microsoft.Phone.Controls;
-using System.Windows.Navigation;
-using System.Windows.Controls.Primitives;
-using System.Diagnostics;
-using System.Windows.Media.Imaging;
-using System.Text.RegularExpressions;
-
-namespace SummerProjectWp7
+﻿namespace SummerProjectWp7
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Net;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Documents;
+    using System.Windows.Input;
+    using System.Windows.Media;
+    using System.Windows.Media.Animation;
+    using System.Windows.Shapes;
+    using Microsoft.Phone.Controls;
+    using System.Windows.Navigation;
+    using System.Windows.Controls.Primitives;
+    using System.Diagnostics;
+    using System.Windows.Media.Imaging;
+    using System.Text.RegularExpressions;
+    using SummerProjectWp7.BL;
+
     public partial class MainPage : PhoneApplicationPage
     {
         /// <summary>
@@ -80,7 +81,7 @@ namespace SummerProjectWp7
         /// </summary>
         /// <param name="sender">The sending toggleButton</param>
         /// <param name="e">Routed event args which contain the original sender</param>
-        private void Toggle(object sender, RoutedEventArgs e)
+        private void ToggleInput(object sender, RoutedEventArgs e)
         {
             // toggle add button, untoggle minus button
             if (MainPage.minusToggled && (sender as Button).Name == "addButton")
@@ -114,7 +115,7 @@ namespace SummerProjectWp7
         /// <param name="e">The KeyEventArgs</param>
         private void ValidateAmountInput(object sender, KeyEventArgs e)
         {
-            TextBox tbx = (sender as TextBox);
+            TextBox tbx = sender as TextBox;
 
             // do not allow more than one dot
             if (tbx.Text.Contains('.') && e.PlatformKeyCode == 190)
@@ -135,7 +136,7 @@ namespace SummerProjectWp7
         /// <param name="e">The EventArgs</param>
         private void SaveNewEntry(object sender, EventArgs e)
         {
-            
+            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -145,7 +146,46 @@ namespace SummerProjectWp7
         /// <param name="e">The EventArgs</param>
         private void ShowSettings(object sender, EventArgs e)
         {
+            throw new NotImplementedException();
+        }
 
+        /// <summary>
+        /// Toggles the month list view (this month / last month)
+        /// </summary>
+        /// <param name="sender">The sending ToggleButton</param>
+        /// <param name="e">The event args</param>
+        private void ToggleMonth(object sender, RoutedEventArgs e)
+        {
+            // toggle this month, untoggle last month
+            if (this.lastMonthButton.IsChecked.GetValueOrDefault() && (sender as ToggleButton).Name == "thisMonthButton")
+            {
+                this.lastMonthButton.IsChecked = false;
+                this.thisMonthButton.IsChecked = true;
+
+                // refresh list
+                ListManager lm = new ListManager();
+                lm.RefreshList(1);
+            }
+            // toggle last month button
+            else if (this.thisMonthButton.IsChecked.GetValueOrDefault() && (sender as ToggleButton).Name == "lastMonthButton")
+            {
+                this.lastMonthButton.IsChecked = true;
+                this.thisMonthButton.IsChecked = false;
+
+                // refresh list
+                ListManager lm = new ListManager();
+                lm.RefreshList(0);
+            }
+            // do not untoggle this month if toggled
+            else if (!this.thisMonthButton.IsChecked.GetValueOrDefault() && (sender as ToggleButton).Name == "thisMonthButton")
+            {
+                this.thisMonthButton.IsChecked = true;
+            }
+            // do not untoggle last month if toggled
+            else if (!this.lastMonthButton.IsChecked.GetValueOrDefault() && (sender as ToggleButton).Name == "lastMonthButton")
+            {
+                this.lastMonthButton.IsChecked = true;
+            }
         }
     }
 }

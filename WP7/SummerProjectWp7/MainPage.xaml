@@ -21,17 +21,17 @@
         <!--Pivot Control-->
         <controls:Pivot Title="CodenameSummerProject" Name="MainPivotControl">
             
-            <!--Pivot item one-->
+            <!--Pivot item Input-->
             <controls:PivotItem Header="Input">
                 <!--StackPanel which contains all needed controls for input-->
                 <StackPanel HorizontalAlignment="Center">
                     
                     <!--Stack Panel for ToggleButtons-->
                     <StackPanel Name="buttonPanel" Orientation="Horizontal" HorizontalAlignment="Center">
-                        <Button Name="addButton" HorizontalAlignment="Left" Height="120" Width="120" Click="Toggle">
+                        <Button Name="addButton" HorizontalAlignment="Left" Height="120" Width="120" Click="ToggleInput">
                             <Image Name="addImg" Source="Images/Add.png" />
                         </Button>
-                        <Button Name="minusButton" HorizontalAlignment="Right" Height="120" Width="120" Click="Toggle">
+                        <Button Name="minusButton" HorizontalAlignment="Right" Height="120" Width="120" Click="ToggleInput">
                             <Image Name="minusImg" Source="Images/Minus_untoggled.png" />
                         </Button>
                     </StackPanel>
@@ -66,8 +66,19 @@
                     </StackPanel>
                 </StackPanel>
             </controls:PivotItem>
- 
-            <!--Pivot item two-->
+
+            <!--Pivot item List-->
+            <controls:PivotItem Header="List">
+                <StackPanel>
+                    <StackPanel Name="monthSelectorPanel" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <ToggleButton Name="lastMonthButton" Click="ToggleMonth">Last Month</ToggleButton>
+                        <ToggleButton Name="thisMonthButton" Click="ToggleMonth" IsChecked="True">This Month</ToggleButton>
+                        
+                    </StackPanel>
+                </StackPanel>
+            </controls:PivotItem>
+
+            <!--Pivot item Graph-->
             <controls:PivotItem Header="Graph"> 
                 <!--Triple line list no text wrapping-->
                     <ListBox x:Name="SecondListBox" Margin="0,0,-12,0" ItemsSource="{Binding Items}">
@@ -82,7 +93,7 @@
                     </ListBox>
             </controls:PivotItem>
 
-            <!--Pivot item three-->
+            <!--Pivot item Statistic-->
             <controls:PivotItem Header="Statistic">
                 <!--Triple line list no text wrapping-->
                 <ListBox x:Name="ThirdListBox" Margin="0,0,-12,0" ItemsSource="{Binding Items}">
@@ -97,6 +108,7 @@
                 </ListBox>
             </controls:PivotItem>
 
+            <!--Other pivot itmes (available in pro version)-->
             <controls:PivotItem Header="Pro1"></controls:PivotItem>
             <controls:PivotItem Header="Pro2"></controls:PivotItem>
         </controls:Pivot>

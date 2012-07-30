@@ -1,17 +1,17 @@
-﻿using System;
-using System.Net;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Ink;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Animation;
-using System.Windows.Shapes;
-using System.ComponentModel;
-
-namespace SummerProjectWp7
+﻿namespace SummerProjectWp7
 {
+    using System;
+    using System.Net;
+    using System.Windows;
+    using System.Windows.Controls;
+    using System.Windows.Documents;
+    using System.Windows.Ink;
+    using System.Windows.Input;
+    using System.Windows.Media;
+    using System.Windows.Media.Animation;
+    using System.Windows.Shapes;
+    using System.ComponentModel;
+
     public class CategoryViewModel : INotifyPropertyChanged
     {
         private string category;
@@ -20,13 +20,13 @@ namespace SummerProjectWp7
         /// </summary>
         public string Category
         {
-            get { return category; }
+            get { return this.category; }
             set 
             {
-                if (value != category)
+                if (value != this.category)
                 {
-                    category = value;
-                    NotifyPropertyChanged("Category");
+                    this.category = value;
+                    this.NotifyPropertyChanged("Category");
                 }
             }
         }
@@ -34,7 +34,7 @@ namespace SummerProjectWp7
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(String propertyName)
         {
-            PropertyChangedEventHandler handler = PropertyChanged;
+            PropertyChangedEventHandler handler = this.PropertyChanged;
             if (null != handler)
             {
                 handler(this, new PropertyChangedEventArgs(propertyName));
