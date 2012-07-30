@@ -19,13 +19,13 @@ namespace SummerProjectWp7
     {
         public MainViewModel()
         {
-            this.CategoryList = new ObservableCollection<CategoryViewModel>();
+            MainViewModel.CategoryList = new ObservableCollection<CategoryViewModel>();
         }
 
         /// <summary>
         /// A collection for CategoryViewModel objects.
         /// </summary>
-        public ObservableCollection<CategoryViewModel> CategoryList { get; private set; }
+        public static ObservableCollection<CategoryViewModel> CategoryList { get; private set; }
 
         public bool IsDataLoaded
         {
@@ -39,8 +39,8 @@ namespace SummerProjectWp7
         public void LoadData()
         {
             // Sample data; replace with real data
-            this.CategoryList.Add(new CategoryViewModel() { Category = "Lebensmittel" });
-            this.CategoryList.Add(new CategoryViewModel() { Category = "Bier" });
+            MainViewModel.CategoryList.Add(new CategoryViewModel() { Category = "Lebensmittel" });
+            MainViewModel.CategoryList.Add(new CategoryViewModel() { Category = "Bier" });
 
             this.IsDataLoaded = true;
         }
