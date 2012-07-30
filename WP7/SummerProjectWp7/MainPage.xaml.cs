@@ -47,7 +47,7 @@ namespace SummerProjectWp7
         {
             InitializeComponent();
 
-            // Set the data context of the listbox control to the sample data
+            // Set the data context of the category combobox
             DataContext = App.ViewModel;
             this.Loaded += new RoutedEventHandler(MainPage_Loaded);
         }

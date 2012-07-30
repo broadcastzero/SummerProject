@@ -5,16 +5,17 @@
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
     xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
     xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:category="clr-namespace:SummerProjectWp7"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696" 
-    d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
-    shell:SystemTray.IsVisible="True">
-
+    shell:SystemTray.IsVisible="True" DataContext="{Binding}">
+    
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
         <!--Pivot Control-->
@@ -36,9 +37,32 @@
                     </StackPanel>
                     
                     <!--Stack Panel for Amount-->
-                    <StackPanel Name="amountPanel" Orientation="Vertical" Margin="0, 20, 0, 0">
+                    <StackPanel Name="amountPanel" Margin="0, 15, 0, 0">
                         <TextBlock HorizontalAlignment="Center">Amount*</TextBlock>
                         <TextBox Name="amountTextBox" InputScope="Number" KeyDown="ValidateAmountInput" />
+                    </StackPanel>
+                    
+                    <!--Stack Panel for Description-->
+                    <StackPanel Name="descriptionPanel" Margin="0, 15, 0, 0">
+                        <TextBlock HorizontalAlignment="Center">Description</TextBlock>
+                        <TextBox Name="descriptionTextBox"></TextBox>
+                    </StackPanel>
+                    
+                    <!--Stack Panel for Category - ListPicker in FullScreen mode only works with databinding!!-->
+                    <StackPanel Name="categoryPanel" Margin="0, 15, 0, 0">
+                        <TextBlock HorizontalAlignment="Center">Category</TextBlock>
+                        <toolkit:ListPicker ExpansionMode="FullScreenOnly" ItemsSource="{Binding CategoryList}">
+                            <toolkit:ListPicker.ItemTemplate>
+                                <DataTemplate>
+                                    <toolkit:ListPickerItem Content="{Binding Category}" />
+                                </DataTemplate>
+                            </toolkit:ListPicker.ItemTemplate>
+                            <toolkit:ListPicker.FullModeItemTemplate>
+                                <DataTemplate>
+                                    <toolkit:ListPickerItem Content="{Binding Category}" />
+                                </DataTemplate>
+                            </toolkit:ListPicker.FullModeItemTemplate>
+                        </toolkit:ListPicker>
                     </StackPanel>
                 </StackPanel>
             </controls:PivotItem>

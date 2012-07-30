@@ -1,0 +1,1271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+	<title>The ComboBox is Dead, Long Live the ListPicker - CodeProject</title> 
+	<link type="text/css" rel="stylesheet" href="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/CodeProject.css">
+
+	
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="Description" content="Bye ComboBox. Hello ListPicker; Author: ykpui; Updated: 22 Nov 2010; Section: List Controls; Chapter: Desktop Development; Updated: 22 Nov 2010">
+<meta name="Keywords" content="C#, Mobile, Silverlight, Windows-Phone-7,List Controls,Desktop Development,Free source code, tutorials">
+<meta name="Author" content="ykpui">
+<meta name="Rating" content="General">
+<meta name="Robots" content="index, follow, NOODP">
+<meta name="Revisit-After" content="1 days">
+<meta name="application-name" content="The Code Project">
+
+<meta name="msapplication-navbutton-color" content="#FF9900">
+<meta name="msapplication-tooltip" content="Your Development Resource.">
+<meta name="msapplication-starturl" content="http://www.codeproject.com/?pinned=true">
+<meta name="msapplication-task" content="name=Homepage;action-uri=http://www.codeproject.com/;icon-uri=http://www.codeproject.com/favico.ico">
+<meta name="msapplication-task" content="name=Latest Articles;action-uri=http://www.codeproject.com/script/articles/Latest.aspx;icon-uri=http://www.codeproject.com/favico.ico">
+<meta name="msapplication-task" content="name=Questions and Answers;action-uri=http://www.codeproject.com/script/Answers/;icon-uri=http://www.codeproject.com/favico.ico">
+<meta name="msapplication-task" content="name=The Lounge;action-uri=http://www.codeproject.com/Lounge.aspx;icon-uri=http://www.codeproject.com/favico.ico">
+
+<link rel="dns-prefetch" href="http://ajax.googleapis.com/"> 
+<link rel="canonical" href="http://www.codeproject.com/Articles/129558/The-ComboBox-is-Dead-Long-Live-the-ListPicker">
+
+
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - All Topics" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=1">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - MFC/C++" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=2">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - C#" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=3">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - VB.NET" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=6">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - Mobile" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=18">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Latest articles - ASP.NET" href="http://www.codeproject.com/WebServices/ArticleRSS.aspx?cat=4">
+<link rel="alternate" type="application/rss+xml" title="CodeProject Lounge Postings" href="http://www.codeproject.com/webservices/LoungeRSS.aspx">
+<link rel="search" type="application/opensearchdescription+xml" title="CodeProject" href="http://www.codeproject.com/info/OpenSearch.xml">
+
+	<!-- base href="http://www.codeproject.com/Articles/129558/The-ComboBox-is-Dead-Long-Live-the-ListPicker" -->
+	<link rel="icon" href="http://www.codeproject.com/favicon.ico" type="image/ico">
+<link rel="shortcut icon" href="http://www.codeproject.com/favicon.ico" type="image/ico">
+<link rel="apple-touch-icon" href="http://www.codeproject.com/images/FavIcon-Apple.png" type="image/png">
+<script src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/beacon.js" async=""></script><script type="text/javascript" language="Javascript">//<![CDATA[
+if(top!=self && !/https?:\/\/([a-zA-Z]+\.)?facebook.com\//gi.test(top.location.href))top.location.href=location.href; if(typeof(DemoUrl)!='undefined')document.write(unescape('%3Cme')+'ta http'+'-equiv="re'+'fresh" con'+'tent="1;url='+DemoUrl+unescape('"%3CE'));
+
+//]]>
+</script>
+
+	
+<script type="text/javascript">
+  var _comscore = _comscore || [];
+  _comscore.push({ c1: "2", c2: "13507173" });
+  (function() {
+	var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+	s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+	el.parentNode.insertBefore(s, el);
+  })();
+</script>
+<noscript class="noscript-show"><span>
+  <img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/p.gif" id="ctl00_Auditing_ComScore">
+</span></noscript>
+
+
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-1735123-1']);
+	_gaq.push(['_trackPageview']);
+	_gaq.push(['_setDomainName', 'www.codeproject.com']);
+	_gaq.push(['_setSessionTimeout', '1200']); 
+
+	(function () {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})(); 
+</script><script src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/ga.js" async="" type="text/javascript"></script>
+
+
+<style>@media print, screen and (view-mode:minimized){#ghostery-purple-bubble{display:none}}</style></head>	
+
+<body class="firefox firefox13">
+
+
+
+
+<a href="#Main"><img alt="Click here to Skip to main content" class="access-link" src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/t.gif"></a>
+
+
+<div class="page-background">
+	<div id="A" class="container-content">
+
+		
+		<div id="ctl00_Suggest" class="suggestions">
+		
+<div class="alert-bar " style="">
+	<a href="#" class="close-notify">×</a>
+	<div><b>Not quite what you are looking for? You may want to try:</b><ul class="see-also"><li><a href="http://www.codeproject.com/KB/windows-phone-7/BuildYourFirstWP7App.aspx?q=wp7+combobox">Build Your First Windows Phone 7 Silverlight Application</a></li><li><a href="http://www.codeproject.com/KB/WPF/enumcombobox.aspx?q=wp7+combobox">Funky WPF - Enumerations and Combo Boxes</a></li></ul><div id="removeHilite" class="alert-bar-command">
+<a href="#" onclick="unmarkText('contentdiv','removeHilite')">highlights off</a>
+</div>
+</div>
+</div>
+		</div>
+
+		
+
+		
+		
+
+<div class="container nav-memberbar clearfix">
+	<div class="member-stats float-left">9,149,499 members and growing!</div>
+	<div class="float-left"></div>
+
+	<div class="float-right">
+		&nbsp;&nbsp;<a title="Sign in using Facebook" class="oauth" href="http://www.codeproject.com/script/Membership/OAuthLogOn.aspx?auth=Facebook" style="vertical-align: bottom; padding-right: 3px;"><img title="Sign in using Facebook" src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/facebook.png" alt="" style="border-width: 0px;"></a><a title="Sign in using Google" class="oauth" href="http://www.codeproject.com/script/Membership/OAuthLogOn.aspx?auth=Google" style="vertical-align: bottom; padding-right: 3px;"><img title="Sign in using Google" src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/google-plus.png" alt="" style="border-width: 0px;"></a>
+
+	</div>
+
+	<div class="float-right">
+		
+
+		
+
+			<script type="text/javascript">//<!--
+			function doSubmit(secure)
+			{
+				if (secure)
+					document.subForm.action = "https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f129558%2fThe-ComboBox-is-Dead-Long-Live-the-ListPicker"
+				else
+					document.subForm.action = "/script/Membership/LogOn.aspx?rp=%2fArticles%2f129558%2fThe-ComboBox-is-Dead-Long-Live-the-ListPicker"
+				document.subForm.submit();
+				return true;
+			}//-->
+			</script>
+
+			<a name="SignUp"></a>
+			<form name="subForm" id="subForm" action="/script/Membership/LogOn.aspx?rp=%2fArticles%2f129558%2fThe-ComboBox-is-Dead-Long-Live-the-ListPicker" method="post" class="tight">
+
+			
+			<input id="FormName" name="FormName" value="MenuBarForm" type="hidden">
+
+			Email <input class="small-text" name="Email" id="Email" style="width: 150px;" type="text">
+			Password <input class="small-text" name="Password" id="Password" style="width: 60px;" type="password">
+			<input value="Sign in" class="button" onclick="return doSubmit(false);" type="submit">
+			
+			<input src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/secure.png" class="align-bottom" title="Sign on securely" onclick="return doSubmit(true);" type="image">
+			<script type="text/javascript">
+function Join(){document.location.href='http://www.codeproject.com/script/Membership/Modify.aspx';return false;}
+document.write('<input type="button" class="button" onclick="return Join();" value="Join"');
+document.write('<input type="hidden" name="fld_quicksign" value="true" />');
+</script><input class="button" onclick="return Join();" value="Join" <input="" name="fld_quicksign" type="button">
+			&nbsp;
+			<a id="ctl00_MemberMenu_SendPassword" href="http://www.codeproject.com/script/Membership/SendPassword.aspx?rp=%2fArticles%2f129558%2fThe-ComboBox-is-Dead-Long-Live-the-ListPicker">Lost password?</a>
+			</form>
+		
+	</div>
+</div>
+		
+
+		
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+		<tbody><tr>
+			<td class="page-header"><a href="http://www.codeproject.com/"><img id="ctl00_Logo" title="The Code Project" src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/logo225x90.gif" alt="Home" style="border-width: 0px;"></a></td>
+			<td class="page-header" align="right">
+				<div class="lqm_ad" lqm_publisher="lqm.codeproject.site" lqm_zone="ros" lqm_format="728x90" lqm_tags="C#, Mobile, Silverlight, Windows-Phone-7,rating4"><iframe id="lqmad1" marginwidth="0" marginheight="0" frameborder="0" height="90" scrolling="no" width="728"></iframe></div>
+			</td>
+		</tr></tbody></table>
+
+		<table class="contrast1-background extended" cellpadding="0" cellspacing="0"><tbody><tr><td nowrap="nowrap">
+			
+
+<div class="navbar clearfix">
+<ul id="nav" class="openable">
+
+<li><a id="ctl00_TopNavBar_Home" class="down" href="http://www.codeproject.com/">Home</a>
+
+
+</li><li class=""><a id="ctl00_TopNavBar_Art" class="down selected" href="http://www.codeproject.com/script/Articles/Latest.aspx">Articles</a>
+
+	<ul>
+		<li class=""><a id="ctl00_TopNavBar_ArtTopicList" class="fly last" onmouseover="navBarMenu.ShowMap(this, 'siteMap');" href="http://www.codeproject.com/script/Content/SiteMap.aspx">Chapters and Sections<span class="fly-menu">&gt;</span></a><ul id="ctl00_TopNavBar_MapFlyout"><li>
+				<div id="siteMap" class="tooltip-flyout">
+					<img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/animated.gif" alt="loading" style="margin: 150px; width: 100px; height: 100px;">
+				</div>
+			</li></ul>
+		</li>
+		<li><a id="ctl00_TopNavBar_ArtSearch" class="fly break" href="http://www.codeproject.com/search.aspx">Search</a></li>
+		<li><a id="ctl00_TopNavBar_ArtLatestArts" class="fly" href="http://www.codeproject.com/script/Articles/Latest.aspx?at=1,3,7">Latest Articles</a></li>
+		<li><a id="ctl00_TopNavBar_ArtLatestTips" class="fly" href="http://www.codeproject.com/script/Articles/Latest.aspx?at=6">Latest Tips/Tricks</a></li>
+		<li><a id="ctl00_TopNavBar_ArtTop" class="fly" href="http://www.codeproject.com/script/Articles/TopArticles.aspx?ta_so=5">Top Articles</a></li>
+		<li><a id="ctl00_TopNavBar_ArtBeginner" class="fly" href="http://www.codeproject.com/search.aspx?aidlst=152&amp;sa_us=True">Beginner Articles</a></li>
+		
+		<li><a id="ctl00_TopNavBar_ArtBlogArticles" class="fly break" href="http://www.codeproject.com/script/Articles/BlogArticleList.aspx">Technical Blogs</a></li>
+		<li><a id="ctl00_TopNavBar_ArtPostArticle" class="fly" href="http://www.codeproject.com/script/Articles/Submit.aspx">Submit an Article or Tip</a></li>
+		<li><a id="ctl00_TopNavBar_ArtPostBlog" class="fly break" href="http://www.codeproject.com/script/Articles/BlogFeed.aspx">Post your Blog</a></li>
+		<li><a id="ctl00_TopNavBar_ArtGuide" class="fly" href="http://www.codeproject.com/info/Submit.aspx">Posting/Update Guidelines</a></li>
+		<li><a id="ctl00_TopNavBar_ArtHelpForum" class="fly" href="http://www.codeproject.com/Forums/1641/Article-Writing.aspx">Article Help Forum</a></li>
+		<li><a id="ctl00_TopNavBar_ArtCompetition" class="fly last" href="http://www.codeproject.com/script/Awards/CurrentCompetitions.aspx?cmpTpId=1">Article Competition</a></li>
+	</ul>
+
+</li>
+
+
+
+<li class=""><a id="ctl00_TopNavBar_Answers" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active">Quick Answers</a>
+	<ul>
+		<li id="ctl00_TopNavBar_AQL"><a id="ctl00_TopNavBar_ArticleQuestion" class="fly highlight" href="#_comments">Ask a Question about this article</a></li>
+
+		<li><a id="ctl00_TopNavBar_QAAsk" class="fly" href="http://www.codeproject.com/Questions/ask.aspx">Ask a Question</a></li>
+
+		
+		<li><a id="ctl00_TopNavBar_QAUnanswered" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=unanswered">View Unanswered Questions</a></li>
+		<li><a id="ctl00_TopNavBar_QALatest" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active">View All Questions...</a></li>
+		
+				<li><a id="ctl00_TopNavBar_QATR_ctl00_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=81" style="padding-left: 30px;">C# questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl01_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=85" style="padding-left: 30px;">ASP.NET questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl02_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=842" style="padding-left: 30px;">VB.NET questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl03_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=78" style="padding-left: 30px;">C++ questions</a></li>
+			
+				<li><a id="ctl00_TopNavBar_QATR_ctl04_Tag" class="fly" href="http://www.codeproject.com/script/Answers/List.aspx?tab=active&amp;alltags=true&amp;tags=308" style="padding-left: 30px;">C#4.0 questions</a></li>
+			
+	</ul>
+
+</li>
+
+
+
+<li class=""><a id="ctl00_TopNavBar_Forums" href="http://www.codeproject.com/script/Forums/List.aspx">Discussions</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_MessageBoardsAll" class="fly" href="http://www.codeproject.com/script/Forums/List.aspx">All Message Boards...</a></li>
+		<li class=""><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1580997/Application-Lifecycle.aspx">Application Lifecycle<span class="fly-menu">&gt;</span></a>
+<ul class="openable"><li><a class="fly" href="http://www.codeproject.com/Forums/1533717/Running-a-Business.aspx">Running a Business</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/1533716/Sales-Marketing.aspx">Sales / Marketing</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/1651/Collaboration-Beta-Testing.aspx">Collaboration / Beta Testing</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/3304/Work-Training-Issues.aspx">Work &amp; Training Issues</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/369270/Design-and-Architecture.aspx">Design and Architecture</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/12076/ASP-NET.aspx">ASP.NET</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1580226/JavaScript.aspx">JavaScript</a>
+</li>
+<li class=""><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1647/C-Cplusplus-MFC.aspx">C / C++ / MFC<span class="fly-menu">&gt;</span></a>
+<ul class="openable"><li><a class="fly" href="http://www.codeproject.com/Forums/4486/ATL-WTL-STL.aspx">ATL /  WTL / STL</a></li>
+<li><a class="fly" href="http://www.codeproject.com/Forums/3785/Managed-Cplusplus-CLI.aspx">Managed C++/CLI</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1649/Csharp.aspx">C#</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1627782/Free-Tools.aspx">Free Tools</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1725/Database.aspx">Database</a>
+</li>
+<li class=""><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/186301/Hardware-Devices.aspx">Hardware &amp; Devices<span class="fly-menu">&gt;</span></a>
+<ul class="openable"><li><a class="fly" href="http://www.codeproject.com/Forums/1644/System-Admin.aspx">System Admin</a></li>
+</ul></li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1606152/Hosting-and-Servers.aspx">Hosting and Servers</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1643/Java.aspx">Java</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1650/NET-Framework.aspx">.NET Framework</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/13695/Mobile.aspx">Mobile</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1653293/VS-11-NET-4-5.aspx">VS 11 &amp; .NET 4.5</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1540733/Sharepoint.aspx">Sharepoint</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1004257/Silverlight-WPF.aspx">Silverlight / WPF</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1646/Visual-Basic.aspx">Visual Basic</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1640/Web-Development.aspx">Web Development</a>
+</li>
+<li><a class="fly" style="padding-left: 30px;" href="http://www.codeproject.com/Forums/1645/Site-Bugs-Suggestions.aspx">Site Bugs / Suggestions</a>
+</li>
+
+	</ul>
+
+</li>
+
+<li class=""><a id="ctl00_TopNavBar_Zones" href="http://www.codeproject.com/Zones/index.aspx">Zones</a>
+
+	<ul>
+		<!--<li class="heading">Zones</li>-->
+		<li><a href="http://www.codeproject.com/Zones/Commerce/" class="fly">The Commerce Zone</a></li><li><a href="http://www.codeproject.com/Zones/Mobile/" class="fly">The Mobile &amp; App Zone</a></li><li><a href="http://www.codeproject.com/Zones/Cloud/" class="fly">The Cloud Zone</a></li><li><a href="http://www.codeproject.com/Zones/Hardware/" class="fly">The Hardware Zone</a></li><li><a href="http://www.codeproject.com/Zones/Parallelism/" class="fly">The Parallelism Zone</a></li><li><a href="http://www.codeproject.com/Zones/WPF-Silverlight/" class="fly">The WPF / Silverlight Zone</a></li><li><a href="http://www.codeproject.com/Zones/Flex-Flash/" class="fly">The Flex / Flash Zone</a></li><li><a href="http://www.codeproject.com/Zones/HTML-CSS/" class="fly">The HTML5 / CSS3 Zone</a></li><li><a href="http://www.codeproject.com/Zones/SharePoint/" class="fly">The SharePoint Zone</a></li><li><a href="http://www.codeproject.com/Zones/Windows-8/" class="fly">The Windows 8 Zone</a></li><li><a href="http://www.codeproject.com/Zones/SqlServer/" class="fly">The SQL Zone</a></li><li><a href="http://www.codeproject.com/Zones/WhitePapers/" class="fly break">WhitePapers / Webcasts</a></li>
+		<li><a id="ctl00_TopNavBar_Solutions" class="fly last" href="http://www.codeproject.com/KB/solution-center/">Solutions Center</a></li>
+	</ul>
+
+</li>
+
+
+
+
+
+
+
+
+
+<li class=""><a id="ctl00_TopNavBar_Features" href="http://www.codeproject.com/Feature/">Features</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_Catalog" class="fly" href="http://www.codeproject.com/script/Catalog/List.aspx">Component &amp; Service Catalog</a></li>
+		<li><a id="ctl00_TopNavBar_Comps" class="fly" href="http://www.codeproject.com/script/Awards/CurrentCompetitions.aspx?cmpTpId=1&amp;awsac=true">Competitions</a></li>
+		<li><a id="ctl00_TopNavBar_News" class="fly" href="http://www.codeproject.com/script/News/List.aspx">News</a></li>
+		<li></li>
+		<li><a id="ctl00_TopNavBar_Insider" class="fly" href="http://www.codeproject.com/Feature/Insider/">The Insider Newsletter</a></li>
+		<li><a id="ctl00_TopNavBar_Newsletters" class="fly" href="http://www.codeproject.com/script/Mailouts/Archive.aspx?mtpid=1">Newsletter archive</a></li>
+		<li><a id="ctl00_TopNavBar_Surveys" class="fly" href="http://www.codeproject.com/script/Surveys/List.aspx">Surveys</a></li>
+		<li><a id="ctl00_TopNavBar_Stuff" class="fly last" href="http://www.codeproject.com/Info/Stuff.aspx">CodeProject Stuff</a></li>
+		<li></li>
+	</ul>
+
+</li>
+
+
+<li class=""><a id="ctl00_TopNavBar_Lounge" href="http://www.codeproject.com/Lounge.aspx">Community</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_InsiderLnk" class="fly" href="http://www.codeproject.com/insider.aspx">The Insider News</a></li>
+		<li><a id="ctl00_TopNavBar_LoungeLnk" class="fly" href="http://www.codeproject.com/Lounge.aspx">The Lounge &nbsp;</a></li>
+		<li><a id="ctl00_TopNavBar_WeirdWonderful" class="fly" href="http://www.codeproject.com/Feature/WeirdAndWonderful.aspx">The Weird &amp; The Wonderful</a></li>
+		<li><a id="ctl00_TopNavBar_SoapBoxLnk" class="fly" href="http://www.codeproject.com/Forums/1536756/The-Soapbox.aspx">The Soapbox</a></li>
+		<li><a id="ctl00_TopNavBar_PRLnk" class="fly break" href="http://www.codeproject.com/Forums/1738007/Press-Releases.aspx">Press Releases</a></li>
+		<li><a id="ctl00_TopNavBar_WhosWho" class="fly" href="http://www.codeproject.com/script/Membership/Profiles.aspx">Who's Who</a></li>
+		<li><a id="ctl00_TopNavBar_MVPs" class="fly" href="http://www.codeproject.com/script/Awards/MVPWinners.aspx">Most Valuable Professionals</a></li>
+		<li><a id="ctl00_TopNavBar_Companies" class="fly" href="http://www.codeproject.com/script/Membership/Profiles.aspx?mgtid=1&amp;mgm=True">Company Listings</a></li>
+
+		
+		<li class="fly"><a href="http://www.codeproject.com/Forums/1580229/Hindi.aspx">Non-English Language
+			<span class="fly-menu">&gt;</span></a>
+		<ul>
+		<li><a class="fly" href="http://www.codeproject.com/Forums/1580229/Hindi.aspx">General Indian Topics</a></li>
+		<li><a class="fly" href="http://www.codeproject.com/Forums/1580230/Chinese.aspx">General Chinese Topics</a></li>
+		</ul>
+		</li>
+		
+	</ul>
+
+</li>
+
+
+<li class="" style="margin-left:20px"><a id="ctl00_TopNavBar_Help" href="http://www.codeproject.com/KB/FAQs/">Help!</a>
+
+	<ul>
+		<li><a id="ctl00_TopNavBar_HelpWhatIs" class="fly" href="http://www.codeproject.com/info/guide.aspx">What is 'The Code Project'?</a></li>
+		<li><a id="ctl00_TopNavBar_HelpGeneral" class="fly break" href="http://www.codeproject.com/KB/FAQs/">General FAQ</a></li>
+		<li><a id="ctl00_TopNavBar_HelpPostQuestion" class="fly break" href="http://www.codeproject.com/Questions/ask.aspx">Ask a Question</a></li>
+		<li><a id="ctl00_TopNavBar_HelpBugs" class="fly" href="http://www.codeproject.com/Forums/1645/Site-Bugs-Suggestions.aspx">Bugs and Suggestions</a></li>
+		<li><a id="ctl00_TopNavBar_HelpArticles" class="fly" href="http://www.codeproject.com/Forums/1641/Article-Writing.aspx">Article Help Forum</a></li>
+		<li><a id="ctl00_TopNavBar_HelpSiteMap" class="fly" href="http://www.codeproject.com/script/Content/SiteMap.aspx">Site Map</a></li>
+		<li><a id="ctl00_TopNavBar_HelpAdvertise" class="fly" href="http://lakequincy.com/">Advertise with us</a></li>
+		<li><a id="ctl00_TopNavBar_HelpAboutUs" class="fly last" href="http://www.codeproject.com/info/about.aspx">About Us</a></li>
+	</ul>
+
+</li>
+
+</ul>
+
+</div>
+		</td><td align="right">
+			
+
+<div class="search-bar">
+
+<form method="get" action="/search.aspx" name="Search" class="tight">
+
+
+<table class="search" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td><input tabindex="2" class="search highlight" id="sb_tb" value="wp7 combobox" name="q"></td><td><input src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/search.gif" type="image"></td></tr></tbody></table>
+
+<div class="hover-container">
+	<div style="display: none;" id="SearchFilter" class="search-advanced small-text align-left">
+	<b>Search within:<br></b>
+		
+		<input id="sb_kw" name="sbo" value="kw" checked="checked" type="radio"><label for="sb_kw">Articles</label><br>
+<input id="sb_qa" name="sbo" value="qa" type="radio"><label for="sb_qa">Quick Answers</label><br>
+<input id="sb_fm" name="sbo" value="fm" type="radio"><label for="sb_fm">Messages</label><br>
+<input id="sb_ctlk" name="sbo" value="ctlk" type="radio"><label for="sb_ctlk">Product Catalog</label><br>
+
+
+		
+		
+	</div>
+</div>
+</form>
+
+</div>
+		</td></tr></tbody></table>
+		
+
+		
+		<div class="container-article hreview-aggregate"> 
+		
+			
+			<div class="container-header">
+				<div id="ctl00_Header" class="header">
+
+					<a name="Main"></a>
+
+					
+					<a name="_articleTop" id="_articleTop"></a>
+					
+
+<div class="clearfix hover-container">
+
+	
+	<div class="float-right action-links"> 
+		<span id="SBI"><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/share_drop24.png" id="ctl00_TitleArea_ActionLinks_AddTo_Img" alt="add" style="vertical-align: middle;" height="24" width="37">
+</span>
+<div style="left: 685px; top: 20.6333px;" id="ATD" class="list-socialbookmark"><div><a class="AddTo" title="Add this page to Twitter" onclick="return socialLinks.addto(0);" href="#"><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/AddTo_Twitter.gif" align="absmiddle" border="0" height="16px" width="16px"> Twitter</a> </div><div><a class="AddTo" title="Add this page to Digg" onclick="return socialLinks.addto(1);" href="#"><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/AddTo_Digg.png" align="absmiddle" border="0" height="16px" width="16px"> Digg</a> </div><div><a class="AddTo" title="Add this page to Facebook" onclick="return socialLinks.addto(2);" href="#"><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/AddTo_Facebook.png" align="absmiddle" border="0" height="16px" width="16px"> Facebook</a> </div><div><a class="AddTo" title="Add this page to Del.icio.us" onclick="return socialLinks.addto(3);" href="#"><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/AddTo_Delicious.png" align="absmiddle" border="0" height="16px" width="16px"> Del.icio.us</a> </div><div><a class="AddTo" title="Add this page to Reddit" onclick="return socialLinks.addto(4);" href="#"><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/AddTo_Reddit.png" align="absmiddle" border="0" height="16px" width="16px"> Reddit</a> </div><div><a class="AddTo" title="Add this page to Stumbleupon" onclick="return socialLinks.addto(5);" href="#"><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/AddTo_stumbleupon.png" align="absmiddle" border="0" height="16px" width="16px"> Stumbleupon</a> </div><div><a class="AddTo" title="Add this page to Newsvine" onclick="return socialLinks.addto(6);" href="#"><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/AddTo_Newsvine.png" align="absmiddle" border="0" height="16px" width="16px"> Newsvine</a> </div><div><a class="AddTo" title="Add this page to Technorati" onclick="return socialLinks.addto(7);" href="#"><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/AddTo_Technorati.png" align="absmiddle" border="0" height="16px" width="16px"> Technorati</a> </div><div><a class="AddTo" title="Add this page to Mr. Wong" onclick="return socialLinks.addto(8);" href="#"><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/AddTo_MrWong.png" align="absmiddle" border="0" height="16px" width="16px"> Mr. Wong</a> </div><div><a class="AddTo" title="Add this page to Yahoo!" onclick="return socialLinks.addto(9);" href="#"><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/AddTo_Yahoo.png" align="absmiddle" border="0" height="16px" width="16px"> Yahoo!</a> </div><div><a class="AddTo" title="Add this page to Google" onclick="return socialLinks.addto(10);" href="#"><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/AddTo_Google.png" align="absmiddle" border="0" height="16px" width="16px"> Google</a> </div><div><a class="AddTo" title="Add this page to Windows Live" onclick="return socialLinks.addto(11);" href="#"><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/AddTo_Live.png" align="absmiddle" border="0" height="16px" width="16px"> Windows Live</a> </div><div><a class="AddTo" title="Send as Email" onclick="return socialLinks.addto(12);" href="#"><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/envelope.gif" align="absmiddle" border="0" height="16px" width="16px"> Send as Email</a> </div></div> 
+ 
+
+<span class="tooltip">
+	 
+	<div class="speech-bubble-container-up">
+		<div class="speech-bubble-up">Add to your CodeProject bookmarks</div>
+		<div class="speech-bubble-pointer-up">
+			<div class="speech-bubble-pointer-up-inner"></div>
+		</div>
+	</div>
+</span>
+
+
+<a id="ctl00_TitleArea_ActionLinks_PrintLnk" class="tooltip" href="http://www.codeproject.com/Articles/129558/The-ComboBox-is-Dead-Long-Live-the-ListPicker?display=Print">
+	<img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/print.gif" style="vertical-align: middle; border: 0px none;" height="24px" width="24px">
+	<div class="speech-bubble-container-up">
+		<div class="speech-bubble-up">Print Article</div>
+		<div class="speech-bubble-pointer-up">
+			<div class="speech-bubble-pointer-up-inner"></div>
+		</div>
+	</div>
+</a>
+	</div>
+
+	<div class="container">
+		
+		<div class="breadcrumb float-left"><a href="http://www.codeproject.com/script/Content/SiteMap.aspx"><span class="sitemap-anchor" onmouseover="navBarMenu.ShowMap(this,'map');"><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/sitemap16.png" alt="Site map" style="vertical-align: middle;" border="0" height="16px" width="16px"><div id="map" class="tooltip-flyout"><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/animated.gif" style="margin: 150px; width: 100px; height: 100px; border: 0px none;"></div></span></a> » <a href="http://www.codeproject.com/Chapters/1/Desktop-Development.aspx">Desktop Development</a> » <a href="http://www.codeproject.com/KB/list/">List Controls</a> » <a href="http://www.codeproject.com/KB/list/#List+Controls">List Controls</a></div>
+	</div>
+
+	
+	<div id="ctl00_TitleArea_InfoArea" class="float-right pad-top">
+		
+
+<div class="infobox">
+	<table class="tight small-text" cellpadding="0" cellspacing="1">
+	<tbody><tr><td>Licence&nbsp;</td><td><a href="http://www.codeproject.com/info/cpol10.aspx" title="The Code Project Open License (CPOL)">CPOL</a></td></tr>
+	
+	<tr><td>First Posted&nbsp;</td><td nowrap="nowrap"><b>22 Nov 2010</b></td></tr>
+	<tr><td>Views&nbsp;</td><td><b>23,402</b></td></tr>
+		
+	
+	<tr><td>Bookmarked&nbsp;</td><td><b>6 times</b></td></tr>
+	
+	
+
+	
+	
+	
+	</tbody></table>
+</div>	
+	</div>
+
+	
+	<div class="item">
+	<h1 id="ctl00_TitleArea_ArticleTitle" class="fn">The ComboBox is Dead, Long Live the ListPicker</h1> 
+	</div>
+
+	
+	<div class="author">
+		By <b><a rel="author" href="http://www.codeproject.com/script/Membership/View.aspx?mid=1765137">ykpui</a></b> | 
+		22 Nov 2010 
+		
+		| <a id="ctl00_TitleArea_ArticleInfoLink" href="http://www.codeproject.com/script/Articles/Types.aspx?#Article">Article</a>
+
+		
+		
+	</div>
+	
+	<div class="tags">
+	<span id="ctl00_TitleArea_TagsList_TagWrp" class="tags">
+	
+	
+	
+	<span id="ctl00_TitleArea_TagsList_VisibleTags"><span class="t"><a rel="tag" href="http://www.codeproject.com/Tags/C--hash--">C#</a></span><span class="t"><a rel="tag" href="http://www.codeproject.com/Tags/Mobile">Mobile</a></span><span class="t"><a rel="tag" href="http://www.codeproject.com/Tags/Silverlight">Silverlight</a></span><span class="t"><a rel="tag" href="http://www.codeproject.com/Tags/Windows-Phone-7">Windows-Phone-7</a></span></span> 
+
+	
+	
+</span>
+
+	</div>
+
+	
+	<div class="abstract summary"><span id="ctl00_TitleArea_ArticleDescr">Bye ComboBox. Hello ListPicker</span></div>
+</div>
+
+
+
+					
+
+				</div>
+
+				<div id="ctl00_HeadSide" class="header-sidebar">
+					<div class="align-left" style="height:24px">
+						
+
+
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+					</div>
+
+					<div id="ctl00_SeeAlso_ZL" class="zone">
+
+	Part of <a id="ctl00_SeeAlso_ZoneLink" class="bold" href="http://www.codeproject.com/Zones/Mobile/">The Mobile &amp; App Zone</a>
+	
+	
+</div>
+
+<div class="bold pad-top">See Also</div>
+<ul class="outdent small-text" style="margin-left:5px">
+	<li><a id="ctl00_SeeAlso_LikeThis" href="http://www.codeproject.com/search.aspx?q=+ComboBox+is+Dead+Long+Live++ListPicker">More like this</a></li>
+	<li><a id="ctl00_SeeAlso_ByAuthor" href="http://www.codeproject.com/script/Articles/MemberArticles.aspx?amid=1765137">More by this author</a></li>
+</ul>
+
+				</div>
+
+			</div>
+			
+
+			
+			<div id="ctl00_Nav" class="container-nav">
+				<div id="ctl00_TabContainer" class="tabs-container clearfix">
+
+					<div class="float-left">
+						
+						
+
+<div class="tabs float-left"><table cellpadding="0" cellspacing="0"><tbody><tr>
+	<td class="tab-selected">Article</td><td class="tab-unselected"><a href="http://www.codeproject.com/script/Articles/ViewDownloads.aspx?aid=129558">Browse Code</a></td><td class="tab-unselected"><a href="http://www.codeproject.com/script/Articles/Statistics.aspx?aid=129558">Stats</a></td><td class="tab-unselected"><a href="http://www.codeproject.com/script/Articles/ListVersions.aspx?aid=129558">Revisions (6)</a></td><td class="tab-unselected"><a href="http://www.codeproject.com/script/Articles/ListAlternatives.aspx?aid=129558">Alternatives</a></td>
+</tr></tbody></table></div>	
+
+
+						
+						<div class="float-left" style="margin-left:15px">
+							<div id="ctl00_CurRat" class="tooltip anchorLink" style="cursor:pointer" onclick="scrollToAnchor('#_rating');" name="CurRat_129558">
+								
+
+<table class="small-text" cellpadding="0" cellspacing="0">
+<tbody><tr>
+	
+	<td class="nowrap">
+
+		<span id="ctl00_ArticleRating_VI">
+		<div class="nowrap rating-stars" style="height:24px;width:120px;position:relative;">
+	<div class="clipped align-left float-left" style="height:24px;width:108px;">
+		<img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/stars-fill.png" style="border-width: 0px;">
+	</div><div class="clipped" style="height:24px;width:12px;position:relative;">
+		<img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/stars-empty.png" style="border-width: 0px; position: absolute; top: 0px; right: 0px;">
+	</div>
+</div>
+		</span>
+
+		
+	</td>
+	
+	<td id="ctl00_ArticleRating_VR" class="nowrap">
+		&nbsp;
+		<span id="ctl00_ArticleRating_VotesR">&nbsp;<span class="rating">4.50</span> (<span class="count">3 votes</span>)</span>
+		
+	</td>
+
+</tr>
+
+</tbody></table>
+
+								<div id="ctl00_RB" class="speech-bubble-container-up">
+									<div class="speech-bubble-up" style="width:150px !important">
+										            
+<div>
+<table class="feature" title="Voting Distribution. Recent data only" cellpadding="0" cellspacing="0" height="50px" width="100%"><tbody><tr><td class="chart-column"><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/t_002.gif" alt="" title="" border="0px" height="1px" width="20pxpx"><br><span title="0 votes">1</span></td>
+<td class="chart-column"><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/t_002.gif" alt="" title="" border="0px" height="1px" width="20pxpx"><br><span title="0 votes">2</span></td>
+<td class="chart-column"><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/t_002.gif" alt="" title="" border="0px" height="1px" width="20pxpx"><br><span title="0 votes">3</span></td>
+<td class="chart-column"><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/pollcol.gif" alt="1 vote, 33.3%" title="1 vote, 33.3%" border="0px" height="25px" width="20pxpx"><br><span title="1 vote">4</span></td>
+<td class="chart-column"><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/pollcol.gif" alt="2 votes, 66.7%" title="2 votes, 66.7%" border="0px" height="50px" width="20pxpx"><br><span title="2 votes">5</span></td>
+</tr></tbody></table><div class="small-text align-center">4.50/5 - 3 votes</div><div class="small-text align-center subdue">μ 4.50, σ<sub>a</sub> 1.24 [<a href="http://www.codeproject.com/KB/FAQs/RatingReputationFAQ.aspx#noisefilter">?</a>]</div>
+</div>
+									</div>
+									<div class="speech-bubble-pointer-up">
+										<div class="speech-bubble-pointer-up-inner"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="float-left">
+							&nbsp; 
+							<a id="discussAnch" href="#_comments" class="tooltip anchorLink">
+							<img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/discuss.gif" alt="Discuss" style="vertical-align: middle; border: 0px none;" height="24px" width="24px">
+								<div class="speech-bubble-container-up">
+									<div class="speech-bubble-up">Discuss this article</div>
+									<div class="speech-bubble-pointer-up">
+										<div class="speech-bubble-pointer-up-inner"></div>
+									</div>
+								</div>
+							</a>
+							<span id="ctl00_CmtCnt" class="subdue small-text align-middle" style="margin-left:-4px">2</span>
+
+							&nbsp; 
+
+							   
+						</div>
+
+					</div>
+
+				</div>
+
+				
+			</div>
+			
+
+			
+			<div class="container-text">
+
+				<div id="AT" class="text">
+					
+					
+					
+					
+
+						
+							
+			
+					<form name="aspnetForm" method="post" action="/Articles/129558/The-ComboBox-is-Dead-Long-Live-the-ListPicker" id="aspnetForm" style="margin:0;padding:0"><div>
+<input name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMjExOTQzNjk4Mw9kFgJmD2QWAgIHD2QWCAIBDxYCHgdWaXNpYmxlZ2QCEQ9kFgICAQ9kFgZmDw8WAh4LTmF2aWdhdGVVcmwFMy9zY3JpcHQvQXJ0aWNsZXMvQWRtaW4vRWRpdG9yQ2hvaWNlLmFzcHg/YWlkPTEyOTU1OGRkAgIPDxYCHwEFOS9zY3JpcHQvQXdhcmRzL0FkbWluL0F3YXJkT2JqZWN0LmFzcHg/b2JpZD0xMjk1NTgmb2J0aWQ9MmRkAgoPDxYCHwEFMC9zY3JpcHQvQXJ0aWNsZXMvQWRtaW4vUXVldWVFZGl0LmFzcHg/YWlkPTEyOTU1OGRkAhMPZBYCAgEPZBYCAgIPFgIeCWlubmVyaHRtbAUBMmQCFQ9kFgICCw9kFgYCAg8WAh4GYWN0aW9uBT4vQXJ0aWNsZXMvMTI5NTU4L1RoZS1Db21ib0JveC1pcy1EZWFkLUxvbmctTGl2ZS10aGUtTGlzdFBpY2tlchYKAgEPDxYCHwEFNy9zY3JpcHQvQXJ0aWNsZXMvU3VibWlzc2lvbldpemFyZC5hc3B4P2F0PTEmYXBpZD0xMjk1NThkZAIDD2QWAgIBDxYCHwBoZAIFD2QWAgICD2QWAgIBDxBkZBYAZAILDxYCHgtfIUl0ZW1Db3VudAIBZAIND2QWAgIBDxYCHgRUZXh0BXc8YSBjbGFzcz0iYW5jaG9yTGluayIgaHJlZj0iL0FydGljbGVzLzEyOTU1OC9UaGUtQ29tYm9Cb3gtaXMtRGVhZC1Mb25nLUxpdmUtdGhlLUxpc3RQaWNrZXIjX2FydGljbGVUb3AiPkFydGljbGUgVG9wPC9hPmQCCg8PFgQfBQUJUGVybWFsaW5rHwEFPi9BcnRpY2xlcy8xMjk1NTgvVGhlLUNvbWJvQm94LWlzLURlYWQtTG9uZy1MaXZlLXRoZS1MaXN0UGlja2VyZGQCGQ8WAh8FBRdDb3B5cmlnaHQgMjAxMCBieSB5a3B1aWRkQBAwap9UYG4HkHgTJAxQu6Zdh4M=" type="hidden">
+</div>
+
+<div>
+
+	<input name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWCAKFt5+bDALAlMXDBwLBlMXDBwLClMXDBwLDlMXDBwLElMXDBwLP+++tCwK5upDkC3hKLCS+esoB/lzRpxBdf8851mrf" type="hidden">
+</div>
+
+						
+
+						<!-- Article Text Start -->
+						<div id="contentdiv">
+						
+
+
+
+
+<h2>Introduction</h2>
+
+<p>In this article, I am going to write about the <code>ListPicker </code>control. </p>
+
+<h2>Background</h2>
+
+<p>The other day, I went and wrote a small app for <span class="search-highlight">WP7</span> (Windows Phone 7). The app wasn't very impressive so I won't be writing about that app.</p>
+
+<p>What I wanted to write was about something that surprised me. I am pretty new to all this <span class="search-highlight">WP7</span> development, so I was kind of stumped when I found out that the phone does not have a <code><span class="search-highlight">ComboBox</span></code>.</p>
+
+<p>I found this to be rather odd, but could on the other hand understand that a <code><span class="search-highlight">ComboBox</span> </code>is
+ probably not a control that is very well suited for a device like a 
+phone. The OS itself seems to be using a list picker thingy instead, but
+ that control seems to have stayed in Microsoft’s own control library 
+and is not available. Is that so? </p>
+
+<h2>Using the Code</h2>
+
+<p>Actually <span class="search-highlight">WP7</span> has a <code><span class="search-highlight">ComboBox</span> </code>control. Although this control is not directly available from the Visual Studio toolbox (or the <span style="FONT-FAMILY: 'Calibri','sans-serif'">Expression Blend 4</span> <span style="FONT-FAMILY: 'Calibri','sans-serif'">for Windows Phone 7</span> toolbox for that matter), you can add it directly via <strong><span style="FONT-FAMILY: 'Calibri','sans-serif'">XAML</span></strong>. It doesn’t look too appealing, especially if you use other Metro-styled controls in your application.</p>
+
+<p><img style="width: 261px; height: 475px;" src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/combobox_close.jpg" border="0" height="475" hspace="0" width="261"> <img style="width: 261px; height: 475px;" src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/combobox_open.jpg" border="0" height="475" hspace="0" width="261"> </p>
+
+<p>As you can see in the images above, the <code><span class="search-highlight">ComboBox</span> </code>doesn't look as you expect it to be. </p>
+
+<p>In order to add it, you just use the following code: </p>
+
+<div style="display:block" width="100%" id="premain0" class="pre-action-link"><img preid="0" style="cursor: pointer;" src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/minus.gif" id="preimg0" height="9" width="9"><span preid="0" style="cursor: pointer; margin-bottom: 0px;" id="precollapse0"> Collapse</span><span> | </span><a preid="0" href="#">Copy Code</a></div><pre style="margin-top: 0px;" id="pre0" lang="xml"><span class="code-keyword">&lt;</span><span class="code-leadattribute"><span class="search-highlight">ComboBox</span></span> <span class="code-attribute">Width</span><span class="code-keyword">="</span><span class="code-keyword">200"</span> <span class="code-attribute">Height</span><span class="code-keyword">="</span><span class="code-keyword">100"</span><span class="code-keyword">&gt;</span>
+    <span class="code-keyword">&lt;</span><span class="code-leadattribute"><span class="search-highlight">ComboBox</span>Item</span> <span class="code-attribute">Content</span><span class="code-keyword">="</span><span class="code-keyword">aaa"</span> <span class="code-keyword">/</span><span class="code-keyword">&gt;</span>
+    <span class="code-keyword">&lt;</span><span class="code-leadattribute"><span class="search-highlight">ComboBox</span>Item</span> <span class="code-attribute">Content</span><span class="code-keyword">="</span><span class="code-keyword">bbb"</span> <span class="code-keyword">/</span><span class="code-keyword">&gt;</span>
+    <span class="code-keyword">&lt;</span><span class="code-leadattribute"><span class="search-highlight">ComboBox</span>Item</span> <span class="code-attribute">Content</span><span class="code-keyword">="</span><span class="code-keyword">ccc"</span> <span class="code-keyword">/</span><span class="code-keyword">&gt;</span>
+<span class="code-keyword">&lt;</span><span class="code-keyword">/</span><span class="code-leadattribute"><span class="search-highlight">ComboBox</span></span><span class="code-keyword">&gt;</span> </pre>
+
+<p>This is the code I used in the above images.</p>
+
+<p>Being frustrated, I started looking around the net to find a reasonable solution. The first solution that was good enough was <a href="http://dotnet.dzone.com/articles/metro-style-combobox-windows?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+zones%2Fria+%28RIA+Zone%29">this article</a> talking about how to change your <code><span class="search-highlight">ComboBox</span> </code>control to be styled as a metro control.</p>
+
+<p>Looking into this example, I realized that this can't be true. It can
+ be debatable but as for UI and development, Microsoft has always done a
+ good job providing all the tools needed.</p>
+
+<p>I decided to keep checking and found a control called <code>ListPicker</code>.</p>
+
+<p><code>ListPicker </code>is a control that acts much like a <code><span class="search-highlight">ComboBox</span></code>. Let me show you:</p>
+
+<p><img style="width: 261px; height: 475px;" src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/listpicker_close.jpg" border="0" height="475" hspace="0" width="261"> <img style="width: 261px; height: 475px;" src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/listpicker_open.jpg" border="0" height="475" hspace="0" width="261"></p>
+
+<p>Much better. right?</p>
+
+<p>In order for you to do this, all you need to do is use this <a class="anchor" id="ListPickerCode" title="ListPickerCode" name="ListPickerCode">code</a>:</p>
+
+<div style="display:block" width="100%" id="premain1" class="pre-action-link"><img preid="1" style="cursor: pointer;" src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/minus.gif" id="preimg1" height="9" width="9"><span preid="1" style="cursor: pointer; margin-bottom: 0px;" id="precollapse1"> Collapse</span><span> | </span><a preid="1" href="#">Copy Code</a></div><pre style="margin-top: 0px;" id="pre1" lang="xml"><span class="code-keyword">&lt;</span><span class="code-leadattribute">toolkit:ListPicker</span><span class="code-keyword">&gt;</span>
+    <span class="code-keyword">&lt;</span><span class="code-leadattribute">toolkit:ListPickerItem</span> <span class="code-attribute">Content</span><span class="code-keyword">="</span><span class="code-keyword">aaa"</span> <span class="code-keyword">/</span><span class="code-keyword">&gt;</span>
+    <span class="code-keyword">&lt;</span><span class="code-leadattribute">toolkit:ListPickerItem</span> <span class="code-attribute">Content</span><span class="code-keyword">="</span><span class="code-keyword">bbb"</span> <span class="code-keyword">/</span><span class="code-keyword">&gt;</span>
+    <span class="code-keyword">&lt;</span><span class="code-leadattribute">toolkit:ListPickerItem</span> <span class="code-attribute">Content</span><span class="code-keyword">="</span><span class="code-keyword">ccc"</span> <span class="code-keyword">/</span><span class="code-keyword">&gt;</span>
+<span class="code-keyword">&lt;</span><span class="code-keyword">/</span><span class="code-leadattribute">toolkit:ListPicker</span><span class="code-keyword">&gt;</span></pre>
+
+<p>And this code gives you the same effect as in the linked article and as you can see, it is very simple. </p>
+
+<p>So what is toolkit? As mentioned in the <a href="http://silverlight.codeplex.com/">official site</a>: </p>
+
+<div style="display:block" width="100%" id="premain2" class="pre-action-link"><img preid="2" style="cursor: pointer;" src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/minus.gif" id="preimg2" height="9" width="9"><span preid="2" style="cursor: pointer; margin-bottom: 0px;" id="precollapse2"> Collapse</span><span> | </span><a preid="2" href="#">Copy Code</a></div><pre style="margin-top: 0px;" id="pre2" lang="text">A product of the Microsoft Silverlight team, the Silverlight Toolkit 
+adds new functionality for designers, developers, and the community to 
+provide an efficient way to help shape product development.  </pre>
+
+<p>It is a set of tools that has a high priority to be integrated in the next version of the development kit. </p>
+
+<p>So what you need to do is download and install the latest available download (<a class="CodePlexPageHeader" href="http://silverlight.codeplex.com/releases/view/55034">Silverlight for Windows Phone Toolkit - Nov 2010</a> while writing this article).</p>
+
+<p>After the installation is done, what you need to do is add it to your project. I recommend adding it through the <code>toolbox</code>, but you could also do this through the references menu. Whatever does it for you.</p>
+
+<p>If you decided to add the toolkit through the references menu, you 
+need to add at the root element of the document the following line: </p>
+
+<div style="display:block" width="100%" id="premain3" class="pre-action-link"><img preid="3" style="cursor: pointer;" src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/minus.gif" id="preimg3" height="9" width="9"><span preid="3" style="cursor: pointer; margin-bottom: 0px;" id="precollapse3"> Collapse</span><span> | </span><a preid="3" href="#">Copy Code</a></div><pre style="margin-top: 0px;" id="pre3" lang="xml">xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;
+	assembly=Microsoft.Phone.Controls.Toolkit"</pre>
+
+<p>Just write <code>xmlns:toolkit=</code> and use the intellisense to complete.</p>
+
+<p>Now add the <a href="#ListPickerCode">above</a> code and you are done.</p>
+
+<p>Happy programming.</p>
+
+<h2>Points of Interest </h2>
+
+<p>I recommend the download of the toolkit event if you are not going to use the <code>ListPicker</code>. It is a set of useful controls that probably will be in the next release of Windows Phone 7 Development Kit.</p>
+
+<h2>History </h2>
+
+<ul>
+<li>22<sup>nd</sup> November, 2010: Initial post</li>
+</ul>
+
+<p>I hope to update this when Microsoft will release the official version of the <code>ListPicker </code>control. </p>
+
+
+
+
+						</div>
+						<!-- Article Text End -->
+
+						
+						
+						<h2>License</h2>
+						<div id="LicenseTerms"><p>This article, along with any associated source code and files, is licensed under <a href="http://www.codeproject.com/info/cpol10.aspx" rel="license">The Code Project Open License (CPOL)</a></p></div>
+						
+
+						
+						<h2 id="ctl00_AboutHeading">About the Author</h2>
+
+						<div class="float-right">
+						<div class="lqm_ad" lqm_publisher="lqm.codeproject.site" lqm_zone="ros" lqm_format="300x250" lqm_loadonview="true" lqm_tags="C#, Mobile, Silverlight, Windows-Phone-7,rating4"></div>
+						</div>
+
+						
+						
+<table border="0" cellpadding="0" cellspacing="5">
+<tbody><tr valign="top">
+<td id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberPhotoTable" style="width: 155px;" valign="top">
+	<b><a id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberProfileLink" href="http://www.codeproject.com/Members/ykpui">ykpui</a></b><br><br>
+	<center></center>
+
+	<div class="small-text">
+		<span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberJobTitle"></span><br>
+		<span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberCompany"></span><br>
+		<span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberLocation"><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/IL.gif" alt="Israel" height="11px" width="16px"> Israel</span><br>
+		<br>
+		<span id="ctl00_AboutAuthorRptr_ctl00_AboutAuthor_memberType">Member</span><br>
+		
+		<br>
+
+		
+	</div>
+</td>
+
+<td>
+	<br>	
+</td>
+</tr>
+</tbody></table><br>
+						
+						
+
+						<div class="clearfix"></div>
+
+						
+						<div id="ctl00_RateArticleRow" class="clearfix voting-bar">
+						<div class="float-left" style="padding-top:8px"><a class="anchorLink" href="http://www.codeproject.com/Articles/129558/The-ComboBox-is-Dead-Long-Live-the-ListPicker#_articleTop">Article Top</a></div>
+						<div class="float-right"><a id="_rating" name="_rating">&nbsp;</a></div> 
+						<div class="float-right align-right">
+							<div id="ctl00_RateArticle_RateItemWrapper" class="small-text" name="RateItem_129558">
+
+	<table class="small-text" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td id="ctl00_RateArticle_VoteResultDiv" align="right" nowrap="nowrap">
+			<span class="voteRes"></span>
+			<img class="loaderImg" alt="loading..." src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/animated_loading_blue.gif" style="display: none;" height="16px" width="16px"> 
+		</td>
+
+	
+		<td class="voteTbl" style="white-space: nowrap;" align="right">
+			<table class="small-text">
+			<tbody><tr>
+				<td id="ctl00_RateArticle_SignIn" nowrap="nowrap">
+					<a href="#SignUp">Sign Up</a> to vote
+				</td>
+
+				
+				<td id="ctl00_RateArticle_StartForm" align="right" nowrap="nowrap">
+					<i>&nbsp;&nbsp;Poor</i>
+				</td>
+
+				<td id="ctl00_RateArticle_VoteFormDiv" class="nowrap">
+					
+
+					<span id="ctl00_RateArticle_RB" class="tooltip ajaxHist radio voting">
+						<span id="ctl00_RateArticle_VoteRBL"><input id="ctl00_RateArticle_VoteRBL_0" name="ctl00$RateArticle$VoteRBL" value="1" onclick="ChkRtctl00_RateArticle(1, 129558);
+$('#ctl00_RateArticle_RCD').show();
+;" type="radio"><input id="ctl00_RateArticle_VoteRBL_1" name="ctl00$RateArticle$VoteRBL" value="2" onclick="ChkRtctl00_RateArticle(2, 129558);
+$('#ctl00_RateArticle_RCD').show();
+;" type="radio"><input id="ctl00_RateArticle_VoteRBL_2" name="ctl00$RateArticle$VoteRBL" value="3" onclick="ChkRtctl00_RateArticle(3, 129558);
+$('#ctl00_RateArticle_RCD').show();
+;" type="radio"><input id="ctl00_RateArticle_VoteRBL_3" name="ctl00$RateArticle$VoteRBL" value="4" onclick="ChkRtctl00_RateArticle(4, 129558);
+$('#ctl00_RateArticle_RCD').show();
+;" type="radio"><input id="ctl00_RateArticle_VoteRBL_4" name="ctl00$RateArticle$VoteRBL" value="5" onclick="ChkRtctl00_RateArticle(5, 129558);
+$('#ctl00_RateArticle_RCD').show();
+;" type="radio"></span> 
+
+						
+					</span>
+
+				</td>
+
+				<td id="ctl00_RateArticle_EndForm" align="left">
+					<i>Excellent</i>
+				</td>
+
+				<td>	
+					<input name="ctl00$RateArticle$SubmitRateBtn" value="Vote" onclick="return PostBack_ctl00_RateArticle_RateItemWrapper();" id="ctl00_RateArticle_SubmitRateBtn" class="button" type="submit">
+				</td>
+			</tr>
+			</tbody></table>
+			<span id="ctl00_RateArticle_ErrorMessage" class="error"></span>
+		</td>
+	</tr>
+	</tbody></table>
+	<div class="hover-container">
+		<div id="ctl00_RateArticle_RCD" class="rating-comment align-left float-right">
+			Add a reason or comment to your vote: <a href="#" id="clear-rate_ctl00_RateArticle_RCD" title="close">x</a><br>
+			<textarea class="RateComment" rows="5" cols="60" style="width: 98%;"></textarea>
+			<span id="ctl00_RateArticle_CommentReq" class="subdue">Votes of 3 or less require a comment</span>
+		</div>
+	</div>
+</div>
+						</div>
+						</div>
+						
+
+					</form>
+
+					
+					<div style="margin:auto;width:728px;height:90px;margin-top:10px">		  
+						<div class="lqm_ad" lqm_publisher="lqm.codeproject.site" lqm_zone="bottom" lqm_format="728x90" lqm_loadonview="true" lqm_tags="C#, Mobile, Silverlight, Windows-Phone-7,pos_bottom"></div>
+					</div>
+					
+
+					
+					
+					<h2>Comments and Discussions</h2>
+					<a name="_comments" id="_comments">&nbsp;</a><table id="ForumTable" class="box forum" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td class="forum-header1 highlight"><b>You must <a href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f129558%2fThe-ComboBox-is-Dead-Long-Live-the-ListPicker%3ffid%3d1597518">Sign In</a> to use this message board.</b> (<a href="https://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f129558%2fThe-ComboBox-is-Dead-Long-Live-the-ListPicker%3ffid%3d1597518">secure sign-in</a>)</td>
+	</tr><tr>
+		<td><table border="0" cellpadding="3px" cellspacing="0" width="100%">
+			<tbody><tr class="forum-header1">
+				<td colspan="2" style="white-space: nowrap;"><div class="container">
+					&nbsp;<div class="float-right">
+						<form action="/Search.aspx?fid=0" method="get" class="tight">
+							<input name="fid" value="1597518" type="hidden"><b>Search this forum </b><input class="Frm_Input" name="qf" style="width: 200px;" type="text">&nbsp;<input value="Go" class="button" type="submit">
+						</form>
+					</div>
+				</div></td></tr><tr class="forum-header2">
+					<td></td><td style="width: 100%;"><div style="text-align:right;">
+						<form action="/script/Forums/SetOptions.aspx?floc=%2fArticles%2f129558%2fThe-ComboBox-is-Dead-Long-Live-the-ListPicker&amp;fid=1597518" method="get" style="margin:0;padding:0;">
+							<input name="fid" value="1597518" type="hidden"><input name="currentQS" value="?floc=%2fArticles%2f129558%2fThe-ComboBox-is-Dead-Long-Live-the-ListPicker&amp;fid=1597518" type="hidden"><input name="floc" value="/Articles/129558/The-ComboBox-is-Dead-Long-Live-the-ListPicker" type="hidden"><input name="prof" id="prof" style="vertical-align: middle;" type="checkbox"><label for="prof">Profile popups</label>&nbsp;&nbsp;&nbsp;&nbsp;Noise<select size="1" class="Frm_DropDown" name="noise">
+								<option value="1">Very High</option><option value="2">High</option><option selected="selected" value="3">Medium</option><option value="4">Low</option><option value="5">Very Low</option>
+							</select>&nbsp;&nbsp;Layout<select size="1" class="Frm_DropDown" name="view">
+								<option value="Quick">Normal</option><option value="Topic">Expand Posts only</option><option selected="selected" value="Expanded">Expand Posts &amp; Replies</option><option value="Thread">Thread View</option><option value="Normal">No Javascript</option><option value="Preview">No JS + Preview</option>
+							</select>&nbsp;&nbsp;Per page<select size="1" class="Frm_DropDown" name="mpp">
+								<option value="10">10</option><option selected="selected" value="25">25</option><option value="50">50</option>
+							</select>&nbsp;&nbsp;&nbsp;<input value="Update" name="SetOpt" class="button" type="submit">
+						</form>
+					</div></td>
+				</tr>
+			
+		</tbody></table></td></tr><tr>
+			<td><a name="xx0xx"></a><table border="0" cellpadding="2px" cellspacing="0" width="100%">
+				<tbody><tr class="forum-navbar">
+					<td>&nbsp;</td><td style="text-align: right; width: 50%;"> <a href="http://www.codeproject.com/Articles/129558/The-ComboBox-is-Dead-Long-Live-the-ListPicker?fid=1597518">Refresh</a></td><td class="nav-link" style="text-align: right; white-space: nowrap;"><span class="subdue">First</span> <span class="subdue">Prev</span> <span class="subdue">Next</span></td>
+				</tr>
+			</tbody></table></td>
+		</tr><tr>
+			<td><table class="fixed-layout blank-background" border="0" cellpadding="0" cellspacing="0" width="100%">
+				<tbody><tr>
+					<td><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/t_003.gif" alt="" border="0" height="5px" width="1px"></td>
+				</tr><tr class="MsgHd Rt HdUnSel ">
+					<td width="100%"><table class="expandedHd" border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tbody><tr class="hover-row">
+							<td class="Frm_MsgIndent" width="16px"><a name="xx4126085xx"></a><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/msg_general.gif" alt="General" align="top" height="16px" width="16px"></td><td class="Frm_MsgSubject hover-container">My vote of 5</td><td class="Frm_MsgIcon"><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/icn-member-16.gif" title="member" alt="member" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=8561251">FruityMo</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">23:13 11 Jan '12 &nbsp;</td>
+						</tr>
+					</tbody></table></td>
+				</tr><tr>
+					<td width="100%"><table class="expandedBd" border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tbody><tr>
+							<td class="Frm_MsgIndent" style="width: 16px;"><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/t_003.gif" alt="" height="1px" width="16px"></td><td class="MsgBd BdUnSel "><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+								<tbody><tr>
+									<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tbody><tr>
+											<td colspan="2">Thanks, it works well <img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/smiley_smile.gif" alt="Smile | :)" align="top"> <br></td>
+										</tr><tr style="vertical-align: middle;">
+											<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f129558%2fThe-ComboBox-is-Dead-Long-Live-the-ListPicker">Sign In</a>·<a class="toolbar" href="http://www.codeproject.com/Articles/129558/The-ComboBox-is-Dead-Long-Live-the-ListPicker?fid=1597518&amp;tid=4126085" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/4126085/My-vote-of-5.aspx" title="Get permanent link">Permalink</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF4126085" style="white-space:nowrap;"></span></td>
+										</tr>
+									</tbody></table></td>
+								</tr>
+							</tbody></table></td>
+						</tr>
+					</tbody></table></td>
+				</tr><tr class="expanded">
+					<td class="root msg-divide"><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/t_003.gif" alt="" border="0" height="1px" width="1px"></td>
+				</tr><tr class="MsgHd Rt HdUnSel ">
+					<td width="100%"><table class="expandedHd" border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tbody><tr class="hover-row">
+							<td class="Frm_MsgIndent" width="16px"><a name="xx3673537xx"></a><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/msg_general.gif" alt="General" align="top" height="16px" width="16px"></td><td class="Frm_MsgSubject hover-container">Good start but ...</td><td class="Frm_MsgIcon"><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/icn-MVP-16.gif" title="mvp" alt="mvp" border="0" height="16px"></td><td class="Frm_MsgAuthor"><a href="http://www.codeproject.com/script/Membership/View.aspx?mid=767687">Richard MacCutchan</a></td><td class="Frm_MsgDate" style="vertical-align: top; white-space: nowrap;">3:31 22 Nov '10 &nbsp;</td>
+						</tr>
+					</tbody></table></td>
+				</tr><tr>
+					<td width="100%"><table class="expandedBd" border="0" cellpadding="0" cellspacing="0" width="100%">
+						<tbody><tr>
+							<td class="Frm_MsgIndent" style="width: 16px;"><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/t_003.gif" alt="" height="1px" width="16px"></td><td class="MsgBd BdUnSel "><table border="0" cellpadding="0" cellspacing="5px" width="100%">
+								<tbody><tr>
+									<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+										<tbody><tr>
+											<td colspan="2">A little tidying up of the formatting needs 
+to be done here; just before you mention Silverlight you have a 
+statement in a code block. This would be better as a straight text 
+paragraph in italics. You also do not mention Silverlight until half way
+ through the article; it would be better to list all the prerequisites 
+at the beginning so people know what to expect. It could also do with 
+some more detail of what you are trying to achieve here and what 
+benefits there are to other developers who might want to use similar 
+features. As it stands this is closer to a Tip/Trick than an article.<br>
+<div class="signature">Just say 'NO' to evaluated arguments for diadic functions! <i>Ash</i><br>
+</div><br></td>
+										</tr><tr style="vertical-align: middle;">
+											<td class="msg-footer"><a class="toolbar" href="http://www.codeproject.com/script/Membership/LogOn.aspx?rp=%2fArticles%2f129558%2fThe-ComboBox-is-Dead-Long-Live-the-ListPicker">Sign In</a>·<a class="toolbar" href="http://www.codeproject.com/Articles/129558/The-ComboBox-is-Dead-Long-Live-the-ListPicker?fid=1597518&amp;tid=3673537" title="View&nbsp;Thread">View&nbsp;Thread</a>·<a class="toolbar" href="http://www.codeproject.com/Messages/3673537/Good-start-but.aspx" title="Get permanent link">Permalink</a></td><td class="msg-footer" style="text-align: right;"><span id="MVF3673537" style="white-space:nowrap;">4.25/5 (4 votes) </span></td>
+										</tr>
+									</tbody></table></td>
+								</tr>
+							</tbody></table></td>
+						</tr>
+					</tbody></table></td>
+				</tr><tr>
+					<td><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/t_003.gif" alt="" border="0" height="5px" width="1px"></td>
+				</tr>
+			</tbody></table></td>
+		</tr><tr>
+			<td><table cellpadding="2px" cellspacing="0" width="100%">
+				<tbody><tr class="forum-footer">
+					<td>Last Visit: 1:31 29 Jun '12  &nbsp; &nbsp; Last Update: 21:41 27 Jul '12 </td><td class="nav-link" style="text-align: right; white-space: nowrap;"><input id="_mbnUrl" value="/Articles/129558/The-ComboBox-is-Dead-Long-Live-the-ListPicker?fid=1597518&amp;fr=3" type="hidden"><b>1</b></td>
+				</tr>
+			</tbody></table></td>
+		</tr>
+	
+</tbody></table><p class="small-text"><img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/msg_general.gif" alt="General" align="top" height="16px" width="16px"> General &nbsp;&nbsp; <img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/msg_news.gif" alt="News" align="top" height="16px" width="16px"> News &nbsp;&nbsp; <img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/msg_idea.gif" alt="Suggestion" align="top" height="16px" width="16px"> Suggestion &nbsp;&nbsp; <img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/msg_question.gif" alt="Question" align="top" height="16px" width="16px"> Question &nbsp;&nbsp; <img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/msg_bug.gif" alt="Bug" align="top" height="16px" width="16px"> Bug &nbsp;&nbsp; <img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/msg_answer.gif" alt="Answer" align="top" height="16px" width="16px"> Answer &nbsp;&nbsp; <img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/msg_joke.gif" alt="Joke" align="top" height="16px" width="16px"> Joke &nbsp;&nbsp; <img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/msg_rant.gif" alt="Rant" align="top" height="16px" width="16px"> Rant &nbsp;&nbsp; <img src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/msg_admin.gif" alt="Admin" align="top" height="16px" width="16px"> Admin &nbsp;&nbsp; </p>
+
+					
+					<div class="theme1-background" style="height:2px"></div>
+
+					<div class="extended tiny-text">
+						<div class="row">
+							<div class="float-left">
+								<a id="ctl00_PermaLink" href="http://www.codeproject.com/Articles/129558/The-ComboBox-is-Dead-Long-Live-the-ListPicker">Permalink</a> | 
+								<a id="ctl00_AdvertiseLink" href="http://lakequincy.com/">Advertise </a> |
+								<a id="ctl00_PrivacyLink" href="http://www.codeproject.com/info/privacy.aspx">Privacy</a> |
+								<a id="ctl00_Mobile" rel="nofollow" href="http://www.codeproject.com/Articles/129558/The-ComboBox-is-Dead-Long-Live-the-ListPicker?display=Mobile">Mobile</a>
+								<br>
+								
+								Web04 |
+								2.5.120724.1 |
+								Last Updated 22 Nov 2010								
+							</div>
+							<div class="float-right align-right">
+								Article Copyright 2010 by ykpui<br>Everything else
+								Copyright © <a href="mailto:webmaster@codeproject.com">CodeProject</a>, 1999-2012 <br>
+								<a id="ctl00_TermsOfUseLink" href="http://www.codeproject.com/info/TermsOfUse.aspx">Terms of Use</a>
+							</div>
+
+							
+
+
+<div class="page-width">
+Layout: <a id="ctl00_PageWidth_FixedT" title="Fixed width layout" rel="nofollow" class=" active" href="http://www.codeproject.com/Articles/129558/The-ComboBox-is-Dead-Long-Live-the-ListPicker?PageFlow=FixedWidth">fixed</a>
+|
+<a id="ctl00_PageWidth_FluidT" title="Fluid layout" rel="nofollow" href="http://www.codeproject.com/Articles/129558/The-ComboBox-is-Dead-Long-Live-the-ListPicker?PageFlow=Fluid">fluid</a>
+</div>
+
+
+
+						</div>
+					</div>
+					
+
+				<br clear="all">
+		
+				
+				</div>
+
+				<div id="ctl00_ContentSide" class="text-sidebar">
+					
+
+					
+
+					
+
+					
+<div class="announce">
+
+<div class="announce-content">
+
+<div>Hot News: <a id="ctl00_News_News_ctl01_Link" href="http://www.infoworld.com/d/microsoft-windows/first-look-microsoft-office-2013-197802">First look: Microsoft Office 2013</a></div>
+
+The Code Project Insider. <a id="ctl00_News_News_ctl02_Subscribe" href="http://www.codeproject.com/Feature/Insider/">Free each morning.</a>
+</div>
+</div>
+
+						
+					<div style="width:160px;margin: 10px 0;">
+						<div class="lqm_ad" lqm_publisher="lqm.codeproject.site" lqm_zone="ros" lqm_format="160x600" lqm_tags="C#, Mobile, Silverlight, Windows-Phone-7,rating4"><iframe id="lqmad4" marginwidth="0" marginheight="0" frameborder="0" height="600" scrolling="no" width="160"></iframe></div>
+					</div>
+
+					
+	<div class="announce">
+	<div id="ctl00_RelatedArticles_RelatedResults_ctl00_header" class="announce-header">Related Articles</div>
+	<div class="announce-content">	
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl01_Link" class="title" href="http://www.codeproject.com/KB/windows-phone-7/XAMLFinance.aspx">XAMLFinance – A Cross-platform WPF, Silverlight &amp; WP7 Application</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl02_Link" class="title" href="http://www.codeproject.com/KB/WPF/WPF_JumpList.aspx">A Simple WP7 JumpList in WPF</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl03_Link" class="title" href="http://www.codeproject.com/KB/windows-phone-7/WP7AccelerometerEmulator.aspx">Accelerometer Support on WP7 Emulator</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl04_Link" class="title" href="http://www.codeproject.com/KB/windows-phone-7/comicReader.aspx">Comic Reader for WP7</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl05_Link" class="title" href="http://www.codeproject.com/KB/windows-phone-7/PhoneCoreFramework.aspx">A framework for building of WP7 application</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl06_Link" class="title" href="http://www.codeproject.com/KB/custom-controls/combobox.aspx">ComboBox WebControl</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl07_Link" class="title" href="http://www.codeproject.com/KB/windows-phone-7/wp7dyndatatemplates.aspx">Applying Data Templates Dynamically by Type in WP7</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl08_Link" class="title" href="http://www.codeproject.com/KB/combobox/lookupcombobox.aspx">Look-up ComboBox</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl09_Link" class="title" href="http://www.codeproject.com/KB/combobox/historycombo.aspx">History ComboBox</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl10_Link" class="title" href="http://www.codeproject.com/KB/windows-phone-7/CommandToAppBarWP7.aspx">Attaching a Command to the WP7 Application Bar</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl11_Link" class="title" href="http://www.codeproject.com/KB/windows-phone-7/XAMLMasking.aspx">XAML Masking for WPF, Silverlight, and WP7 - Rating control and more</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl12_Link" class="title" href="http://www.codeproject.com/Tips/97568/XML-parsing-in-WP7.aspx">XML parsing in WP7</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl13_Link" class="title" href="http://www.codeproject.com/Articles/151179/SQLite-on-WP7.aspx">SQLite on WP7</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl14_Link" class="title" href="http://www.codeproject.com/KB/cpp/multicolumncombo.aspx">Multi-Column ComboBox</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl15_Link" class="title" href="http://www.codeproject.com/KB/combobox/DotNetMultiColumnComboBox.aspx">A data-bound multi-column combobox</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl16_Link" class="title" href="http://www.codeproject.com/KB/combobox/comboboxcs.aspx">Case-sensitive ComboBox</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl17_Link" class="title" href="http://www.codeproject.com/KB/combobox/combocompletion.aspx">Implementing an autocompleting Combobox</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl18_Link" class="title" href="http://www.codeproject.com/KB/combobox/CustomComboBox.aspx">Custom ComboBox</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl20_Link" class="title" href="http://www.codeproject.com/KB/windows-phone-7/403449.aspx">RadPhoneApplicationFrame for Page Animations using the Telerik Controls for WP7</a>
+		
+	</div>
+	
+	<div class="container-related-item">
+		<a id="ctl00_RelatedArticles_RelatedResults_ctl21_Link" class="title" href="http://www.codeproject.com/KB/windows-phone-7/WP7TrialAppReinstall.aspx">WP7 Trial App Reinstall Problem</a>
+		
+	</div>
+	
+	</div>
+	</div>
+	
+
+
+					
+
+				</div>
+
+			</div>
+			
+
+		</div>
+		
+
+	</div>
+</div>
+
+
+<div style="display:none;" id="lqm_AdTable">
+	
+</div>
+
+<script type="text/javascript" language="Javascript" src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/jquery.js"></script><script type="text/javascript">//<![CDATA[
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='/script/JS/jquery-1.6.2.min.js' type='text/javascript' %3E%3C/script%3E"));
+}//]]></script>
+<script type="text/javascript" language="Javascript" src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/article.js"></script>
+<script type="text/javascript" language="Javascript" src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/navbar.js"></script>
+<script type="text/javascript" language="Javascript" src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/Notifications.js"></script>
+<script type="text/javascript" language="Javascript" src="The-ComboBox-is-Dead-Long-Live-the-ListPicker-Dateien/m.js"></script>
+<script type="text/javascript" language="Javascript">//<![CDATA[
+function markAllText(){
+ markTextInElement('wp7','contentdiv');
+ markTextInElement('combobox','contentdiv');
+}
+$(function(){markAllText()});
+var socialLinks = new social();
+socialLinks.PlaceholderId="ATD";socialLinks.ObjectId=129558;
+socialLinks.ObjectTypeId=2;
+socialLinks.addtoMethod=1;
+socialLinks.Horizontal=false;
+socialLinks.Showname=true;
+socialLinks.setupLinks("socialLinks", escape(document.location.href),escape(document.title), 100, 0, "small-text Bold", "AddTo");
+socialLinks.setupMenu();
+$(document).ready(function() {   $('.alert-bar').slideDown('fast');   $('.alert-bar a.close-notify').click(function() {      $('.alert-bar').slideUp('fast');        return false;    });});
+$(function ()
+                        {
+                        $('.oauth').click(function () {
+                            $this = $(this);
+                            href = $this.attr('href');
+                            var myWindow = window.open(href, 'popup',
+                                        'width=600,height=400,location=0,menubar=0,resizeable=0,scrollbars=0,toolbar=0');
+                            myWindow.focus();
+                            var timer = setInterval(function () {
+                                            if (myWindow.closed) {
+                                                clearInterval(timer);
+                                                // window.location.reload(); // May do a POST reload, shows a warning
+                                                window.location = window.location; // force a GET reload
+                                            }
+                                        }, 200);
+                            return false;
+                        });
+                    });
+if($.LqmAds)$.LqmAds();
+var oSrchFlt = false, oSrchBox=false,srchBoxFoc=false;
+$(document).ready(function() {
+ if(InitWatermark)InitWatermark('sb_tb', 'Search site');
+ var sbar = $('#sb_tb'); 
+ var sfilter = $('#SearchFilter');
+ if (sbar && sfilter) {
+  sfilter.removeClass('popup'); sfilter.hide();
+  sbar.blur(function() { if (!oSrchFlt)sfilter.hide();srchBoxFoc=false; });
+  sbar.focus(function() { oSrchFlt=false;srchBoxFoc=true;sfilter.show(); });
+  sbar.mouseleave(function() { oSrchBox=false; });
+  sbar.mouseover(function() { oSrchBox=true; });
+  sfilter.mouseleave(function() { oSrchFlt=false; if (!srchBoxFoc&&!oSrchBox)sfilter.hide();});
+  sfilter.mouseover(function() { oSrchFlt=true; });
+ }
+});
+$(document).ready(function() { anchorAnimate(); });
+$("#ctl00_RateArticle_RateItemWrapper").removeClass("container-rating");$('#clear-rate_ctl00_RateArticle_RCD').click(function () { $('#ctl00_RateArticle_RCD').hide(); return false;});
+function PostBack_ctl00_RateArticle_RateItemWrapper() {
+  return rateItem(129558,2,1,true,true,3);
+}
+function ChkRtctl00_RateArticle(val, objId) {if (val<=3||true) {
+$('div[name=RateItem_' + objId + '] .rating-comment').css("display","");}
+else $('div[name=RateItem_' + objId + '] .rating-comment').css("display","none");}
+
+forumDir = '/script/Forums/';
+staticServer = 'http://s.codeproject.com';
+allowModeration = false;
+allowRating = false;
+var smoothScroll = false;
+Selected        = -1;
+oldTitle        = document.title;
+minMessageScore = 1;
+minMessageScore = 5;
+abuseScore      = -2;
+spamScore       = -1;
+
+
+//]]>
+</script>
+
+
+
+<canvas id="cv1" width="1px" height="1px" style="position: absolute; left: 0px; top: 0px; pointer-events: none;"></canvas><canvas id="cv2" width="1px" height="1px" style="position: absolute; left: 0px; top: 0px; pointer-events: none;"></canvas></body></html>
