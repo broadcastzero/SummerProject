@@ -127,5 +127,25 @@ namespace SummerProjectWp7
                e.Handled = true;
             }
         }
+
+        /// <summary>
+        /// Saves a new entry to the database
+        /// </summary>
+        /// <param name="sender">The sending ApplicationBarIconButton</param>
+        /// <param name="e">The EventArgs</param>
+        private void SaveNewEntry(object sender, EventArgs e)
+        {
+            
+        }
+
+        /// <summary>
+        /// Shows the settings page
+        /// </summary>
+        /// <param name="sender">The sending ApplicationBarIconButton</param>
+        /// <param name="e">The EventArgs</param>
+        private void ShowSettings(object sender, EventArgs e)
+        {
+
+        }
     }
 }

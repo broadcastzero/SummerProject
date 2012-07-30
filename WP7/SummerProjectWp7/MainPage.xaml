@@ -22,7 +22,7 @@
         <controls:Pivot Title="CodenameSummerProject" Name="MainPivotControl">
             
             <!--Pivot item one-->
-            <controls:PivotItem Header="Eingabe">
+            <controls:PivotItem Header="Input">
                 <!--StackPanel which contains all needed controls for input-->
                 <StackPanel HorizontalAlignment="Center">
                     
@@ -38,7 +38,7 @@
                     
                     <!--Stack Panel for Amount-->
                     <StackPanel Name="amountPanel" Margin="0, 15, 0, 0">
-                        <TextBlock HorizontalAlignment="Center">Amount*</TextBlock>
+                        <TextBlock HorizontalAlignment="Center">Amount</TextBlock>
                         <TextBox Name="amountTextBox" InputScope="Number" KeyDown="ValidateAmountInput" />
                     </StackPanel>
                     
@@ -68,7 +68,7 @@
             </controls:PivotItem>
  
             <!--Pivot item two-->
-            <controls:PivotItem Header="Grafik"> 
+            <controls:PivotItem Header="Graph"> 
                 <!--Triple line list no text wrapping-->
                     <ListBox x:Name="SecondListBox" Margin="0,0,-12,0" ItemsSource="{Binding Items}">
                         <ListBox.ItemTemplate>
@@ -83,7 +83,7 @@
             </controls:PivotItem>
 
             <!--Pivot item three-->
-            <controls:PivotItem Header="Statistik">
+            <controls:PivotItem Header="Statistic">
                 <!--Triple line list no text wrapping-->
                 <ListBox x:Name="ThirdListBox" Margin="0,0,-12,0" ItemsSource="{Binding Items}">
                     <ListBox.ItemTemplate>
@@ -105,7 +105,8 @@
     <!--ApplicationBar for settings and credits-->
     <phone:PhoneApplicationPage.ApplicationBar>
         <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
-            <shell:ApplicationBarIconButton IconUri="/Images/Settings.png" Text="Settings"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/Save.png" Text="Save" Click="SaveNewEntry" />
+            <shell:ApplicationBarIconButton IconUri="/Images/Settings.png" Text="Settings" Click="ShowSettings"/>
         </shell:ApplicationBar>
     </phone:PhoneApplicationPage.ApplicationBar>
 

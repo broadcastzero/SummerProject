@@ -39,8 +39,8 @@ namespace SummerProjectWp7
         public void LoadData()
         {
             // Sample data; replace with real data
-            MainViewModel.CategoryList.Add(new CategoryViewModel() { Category = "Lebensmittel" });
-            MainViewModel.CategoryList.Add(new CategoryViewModel() { Category = "Bier" });
+            MainViewModel.CategoryList.Add(new CategoryViewModel() { Category = "Food" });
+            MainViewModel.CategoryList.Add(new CategoryViewModel() { Category = "Beer" });
 
             this.IsDataLoaded = true;
         }
