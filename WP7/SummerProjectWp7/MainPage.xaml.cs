@@ -76,7 +76,7 @@
         }
 
         /// <summary>
-        /// Toggles the toggleButtons with a little help of a static bool var.
+        /// Toggles the input toggleButtons with a little help of a static bool var.
         /// Checks the static var and toggles if needed.
         /// </summary>
         /// <param name="sender">The sending toggleButton</param>
@@ -148,7 +148,7 @@
             double output;
             bool success = Double.TryParse(this.amountTextBox.Text, out output);
 
-            // Shows message in case of error or if category is empty and does not continue with saving the entry
+            // Shows message in case of parsing error or if category is empty, does not continue with saving the entry
             if (!success || entry.Category == string.Empty)
             {
                 this.ShowMessage(this.msgLabelInput, "Please check amount", Colors.Red);
@@ -160,6 +160,8 @@
             // Save new entry and show success message
             EntryManager manager = new EntryManager();
             manager.SaveNewEntry(entry);
+
+            this.ShowMessage(this.msgLabelInput, "Successfully saved", Colors.Green);
         }
 
         /// <summary>

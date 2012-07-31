@@ -13,9 +13,14 @@
 
     public class EntryManager
     {
+        /// <summary>
+        /// Validates the entry params and sends the business object to the DAL
+        /// </summary>
+        /// <param name="entry"></param>
         public void SaveNewEntry(ListEntry entry)
         {
-            throw new NotImplementedException();
+            // TODO: check values and move line below to DAL
+            App.ListEntries.Add(entry);            
         }
     }
 }

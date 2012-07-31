@@ -14,10 +14,13 @@
     using System.Windows.Shapes;
     using Microsoft.Phone.Controls;
     using Microsoft.Phone.Shell;
+    using SummerProjectWp7.BL;
 
     public partial class App : Application
     {
         private static MainViewModel viewModel = null;
+
+        public static List<ListEntry> ListEntries = null;
 
         /// <summary>
         /// A static ViewModel used by the views to bind against.
@@ -73,6 +76,12 @@
                 // Caution:- Use this under debug mode only. Application that disables user idle detection will continue to run
                 // and consume battery power when the user is not using the phone.
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
+            }
+
+            // Initialises the static list in which the list entries are saved
+            if (App.ListEntries == null)
+            {
+                App.ListEntries = new List<ListEntry>();
             }
         }
 
