@@ -136,7 +136,42 @@
         /// <param name="e">The EventArgs</param>
         private void SaveNewEntry(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            // Hide message label
+            this.msgLabelInput.Visibility = Visibility.Collapsed;
+
+            // Get all values out of the input fields
+            ListEntry entry = new ListEntry();
+            entry.Outgo = MainPage.minusToggled;
+            entry.Category = this.categoryListPicker.SelectedItem.ToString();
+            entry.Description = this.descriptionTextBox.Text;
+            
+            double output;
+            bool success = Double.TryParse(this.amountTextBox.Text, out output);
+
+            // Shows message in case of error or if category is empty and does not continue with saving the entry
+            if (!success || entry.Category == string.Empty)
+            {
+                this.ShowMessage(this.msgLabelInput, "Please check amount", Colors.Red);
+                return;
+            }
+
+            entry.Amount = output;
+
+            // Save new entry and show success message
+            EntryManager manager = new EntryManager();
+            manager.SaveNewEntry(entry);
+        }
+
+        /// <summary>
+        /// Shows a message in a given TextBlock
+        /// </summary>
+        /// <param name="msg"></param>
+        /// <param name="col"></param>
+        private void ShowMessage(TextBlock label, string msg, Color col)
+        {
+            label.Foreground = new SolidColorBrush(col);
+            label.Text = msg;
+            label.Visibility = Visibility.Visible;
         }
 
         /// <summary>

@@ -66,6 +66,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BL\EntryManager.cs" />
     <Compile Include="BL\ListEntry.cs" />
     <Compile Include="BL\ListManager.cs" />
     <Compile Include="MainPage.xaml.cs">

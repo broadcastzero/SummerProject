@@ -51,7 +51,7 @@
                     <!--Stack Panel for Category - ListPicker in FullScreen mode only works with databinding!!-->
                     <StackPanel Name="categoryPanel" Margin="0, 15, 0, 0">
                         <TextBlock HorizontalAlignment="Center">Category</TextBlock>
-                        <toolkit:ListPicker ExpansionMode="FullScreenOnly" ItemsSource="{Binding CategoryList}">
+                        <toolkit:ListPicker Name="categoryListPicker" ExpansionMode="FullScreenOnly" ItemsSource="{Binding CategoryList}">
                             <toolkit:ListPicker.ItemTemplate>
                                 <DataTemplate>
                                     <toolkit:ListPickerItem Content="{Binding Category}" />
@@ -64,6 +64,9 @@
                             </toolkit:ListPicker.FullModeItemTemplate>
                         </toolkit:ListPicker>
                     </StackPanel>
+                    
+                    <!--Messagelabel-->
+                    <TextBlock Name="msgLabelInput" HorizontalAlignment="Center" Visibility="Collapsed">Message</TextBlock>
                 </StackPanel>
             </controls:PivotItem>
 

@@ -25,7 +25,7 @@
         /// </summary>
         public double Amount
         {
-            get;
+            get { return this.amount; }
             set 
             {
                 if (value >= 0)
