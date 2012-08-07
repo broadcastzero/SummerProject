@@ -20,6 +20,9 @@
     using SummerProjectWp7.BL;
     using SummerProjectWp7.UserExceptions;
     using Coding4Fun.Phone.Controls;
+    using SummerProjectWp7.Helpers;
+    using System.IO.IsolatedStorage;
+    using SummerProjectWp7.DAL;
 
     public partial class MainPage : PhoneApplicationPage
     {
@@ -75,6 +78,26 @@
             {
                 App.ViewModel.LoadData();
             }
+
+            // First run? Create database!
+            IsolatedStorageSettings userSettings = IsolatedStorageSettings.ApplicationSettings;
+            // Set if this is the first run of the application or not
+            if ((bool)userSettings["firstRun"] == true)
+            {
+                ToastPrompt toast = new ToastPrompt();
+                toast.Title = "Info";
+                toast.Message = "first run - database created";
+
+                toast.Show();
+            }
+            else
+            {
+                ToastPrompt toast = new ToastPrompt();
+                toast.Title = "Info";
+                toast.Message = "not first run - no database created";
+
+                toast.Show();
+            }            
         }
 
         /// <summary>
@@ -143,7 +166,8 @@
             this.Focus();
 
             // Get all values out of the input fields
-            ListEntry entry = new ListEntry();
+            ListItemClass entry = new ListItemClass();
+            
             entry.Outgo = MainPage.minusToggled;
             entry.Category = this.categoryListPicker.SelectedItem.ToString();
             entry.Description = this.descriptionTextBox.Text;

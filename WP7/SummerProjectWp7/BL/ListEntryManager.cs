@@ -23,7 +23,7 @@
         /// Validates the entry params and sends the business object to the DAL
         /// </summary>
         /// <param name="entry"></param>
-        public void SaveNewEntry(ListEntry entry)
+        public void SaveNewEntry(ListItemClass entry)
         {
             // instance of argument provided?
             if (entry == null)
@@ -47,22 +47,12 @@
                 entry.Description = string.Empty; // is allowed to be empty, but not null
             }
 
+            // add current datetime
+            entry.SaveDate = DateTime.Now;
+
             // save to database
             DataBaseManager manager = new DataBaseManager();
-
-            try
-            {
-                manager.Save(entry);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            // TODO: catch exception
-            /*catch (SQLiteException)
-            {
-                throw new DataBaseException("Saving failed.");
-            }*/
+            manager.AddItem(entry);
         }
 
         /// <summary>

@@ -54,7 +54,6 @@
     <Reference Include="Coding4Fun.Phone.Controls.Toolkit">
       <HintPath>..\packages\Coding4Fun.Phone.Controls.Complete.1.5.6\lib\sl4-windowsphone71\Coding4Fun.Phone.Controls.Toolkit.dll</HintPath>
     </Reference>
-    <Reference Include="Community.CsharpSqlite.WP, Version=0.6.1.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.Phone" />
     <Reference Include="Microsoft.Phone.Controls" />
     <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL">
@@ -62,6 +61,7 @@
       <HintPath>..\packages\SilverlightToolkitWP.4.2012.6.25\lib\sl4-windowsphone71\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="system.data.linq" />
     <Reference Include="System.Windows" />
     <Reference Include="system" />
     <Reference Include="System.Core" />
@@ -73,9 +73,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="BL\ListEntry.cs" />
     <Compile Include="BL\ListEntryManager.cs" />
+    <Compile Include="BL\ListItemModel.cs" />
     <Compile Include="DAL\DataBaseManager.cs" />
+    <Compile Include="Helpers\AppSettings.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

@@ -16,12 +16,16 @@
     using Microsoft.Phone.Shell;
     using SummerProjectWp7.BL;
     using System.Collections.ObjectModel;
+    using System.Reflection;
+    using SummerProjectWp7.Helpers;
+    using SummerProjectWp7.DAL;
+    using System.IO.IsolatedStorage;
 
     public partial class App : Application
     {
         private static MainViewModel viewModel = null;
-
-        public static ObservableCollection<ListEntry> ListEntries = null;
+        
+        //public static ObservableCollection<ListItemClass> ListEntries = null;
 
         /// <summary>
         /// A static ViewModel used by the views to bind against.
@@ -79,17 +83,32 @@
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
 
-            // Initialises the static list in which the list entries are saved
+            /* Initialises the static list in which the list entries are saved
             if (App.ListEntries == null)
             {
-                App.ListEntries = new ObservableCollection<ListEntry>();
-            }
+                App.ListEntries = new ObservableCollection<ListItemClass>();
+            }*/
         }
 
         // Code to execute when the application is launching (eg, from Start)
         // This code will not execute when the application is reactivated
         private void Application_Launching(object sender, LaunchingEventArgs e)
         {
+            // First run? Create database!
+            IsolatedStorageSettings userSettings = IsolatedStorageSettings.ApplicationSettings; ;
+            // Set if this is the first run of the application or not
+            if (!userSettings.Contains("firstRun"))
+            {
+                userSettings.Add("firstRun", (bool)true);
+                userSettings.Add("connectionString", "Data Source=isostore:/ListItemsDB.sdf");
+
+                DataBaseManager dbm = new DataBaseManager();
+                dbm.CreateDatabase();
+            }
+            else
+            {
+                userSettings["firstRun"] = (bool)false;
+            }
         }
 
         // Code to execute when the application is activated (brought to foreground)
