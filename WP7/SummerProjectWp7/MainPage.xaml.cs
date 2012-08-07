@@ -137,8 +137,9 @@
         /// <param name="e">The EventArgs</param>
         private void SaveNewEntry(object sender, EventArgs e)
         {
-            // Hide message label
+            // Hide message label and keyboard
             this.msgLabelInput.Visibility = Visibility.Collapsed;
+            this.Focus();
 
             // Get all values out of the input fields
             ListEntry entry = new ListEntry();
