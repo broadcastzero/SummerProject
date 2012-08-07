@@ -68,6 +68,7 @@
     </Compile>
     <Compile Include="BL\ListEntry.cs" />
     <Compile Include="BL\ListEntryManager.cs" />
+    <Compile Include="DAL\DataBaseManager.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

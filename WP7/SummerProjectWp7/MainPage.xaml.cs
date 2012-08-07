@@ -165,6 +165,11 @@
                 ListEntryManager manager = new ListEntryManager();
                 manager.SaveNewEntry(entry);
             }
+            catch (ArgumentException ex)
+            {
+                this.ShowMessage(this.msgLabelInput, ex.Message, Colors.Red);
+                return;
+            }
             catch (DataBaseException ex)
             {
                 this.ShowMessage(this.msgLabelInput, ex.Message, Colors.Red);
