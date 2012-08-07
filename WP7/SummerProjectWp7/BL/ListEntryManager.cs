@@ -15,8 +15,18 @@
     /// This class is responsible for managing and updating the list view. 
     /// It gets values out of the database and fills and refreshes the list.
     /// </summary>
-    public class ListManager
+    public class ListEntryManager
     {
+        /// <summary>
+        /// Validates the entry params and sends the business object to the DAL
+        /// </summary>
+        /// <param name="entry"></param>
+        public void SaveNewEntry(ListEntry entry)
+        {
+            // TODO: check values and move line below to DAL
+            App.ListEntries.Add(entry);
+        }
+
         /// <summary>
         /// Refreshes the list view.
         /// </summary>

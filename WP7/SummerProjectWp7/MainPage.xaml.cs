@@ -18,6 +18,7 @@
     using System.Windows.Media.Imaging;
     using System.Text.RegularExpressions;
     using SummerProjectWp7.BL;
+    using SummerProjectWp7.UserExceptions;
 
     public partial class MainPage : PhoneApplicationPage
     {
@@ -157,10 +158,19 @@
 
             entry.Amount = output;
 
-            // Save new entry and show success message
-            EntryManager manager = new EntryManager();
-            manager.SaveNewEntry(entry);
+            // Save new entry and show success or error message
+            try
+            {
+                ListEntryManager manager = new ListEntryManager();
+                manager.SaveNewEntry(entry);
+            }
+            catch (DataBaseException ex)
+            {
+                this.ShowMessage(this.msgLabelInput, ex.Message, Colors.Red);
+                return;
+            }
 
+            // Show success message
             this.ShowMessage(this.msgLabelInput, "Successfully saved", Colors.Green);
         }
 
@@ -200,7 +210,7 @@
                 this.thisMonthButton.IsChecked = true;
 
                 // refresh list
-                ListManager lm = new ListManager();
+                ListEntryManager lm = new ListEntryManager();
                 lm.RefreshList(1);
             }
             // toggle last month button
@@ -210,7 +220,7 @@
                 this.thisMonthButton.IsChecked = false;
 
                 // refresh list
-                ListManager lm = new ListManager();
+                ListEntryManager lm = new ListEntryManager();
                 lm.RefreshList(0);
             }
             // do not untoggle this month if toggled
