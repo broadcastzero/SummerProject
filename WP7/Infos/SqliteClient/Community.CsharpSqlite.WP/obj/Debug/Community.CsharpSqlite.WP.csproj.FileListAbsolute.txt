@@ -1,0 +1,4 @@
+E:\Users\Felix\SummerProject\WP7\Infos\SqliteClient\Community.CsharpSqlite.WP\Bin\Debug\Community.CsharpSqlite.WP.dll
+E:\Users\Felix\SummerProject\WP7\Infos\SqliteClient\Community.CsharpSqlite.WP\Bin\Debug\Community.CsharpSqlite.WP.pdb
+E:\Users\Felix\SummerProject\WP7\Infos\SqliteClient\Community.CsharpSqlite.WP\obj\Debug\Community.CsharpSqlite.WP.dll
+E:\Users\Felix\SummerProject\WP7\Infos\SqliteClient\Community.CsharpSqlite.WP\obj\Debug\Community.CsharpSqlite.WP.pdb

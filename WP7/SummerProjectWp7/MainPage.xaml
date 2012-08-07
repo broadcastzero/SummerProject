@@ -64,9 +64,6 @@
                             </toolkit:ListPicker.FullModeItemTemplate>
                         </toolkit:ListPicker>
                     </StackPanel>
-                    
-                    <!--Messagelabel-->
-                    <TextBlock Name="msgLabelInput" HorizontalAlignment="Center" Visibility="Collapsed">Message</TextBlock>
                 </StackPanel>
             </controls:PivotItem>
 

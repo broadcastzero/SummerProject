@@ -1,56 +1,31 @@
-﻿namespace SummerProjectWp7
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Net;
-    using System.Windows;
-    using System.Windows.Controls;
-    using System.Windows.Documents;
-    using System.Windows.Input;
-    using System.Windows.Media;
-    using System.Windows.Media.Animation;
-    using System.Windows.Navigation;
-    using System.Windows.Shapes;
-    using Microsoft.Phone.Controls;
-    using Microsoft.Phone.Shell;
-    using SummerProjectWp7.BL;
-    using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Animation;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using Microsoft.Phone.Controls;
+using Microsoft.Phone.Shell;
 
+namespace CSharpSqlite.TestProject
+{
     public partial class App : Application
     {
-        private static MainViewModel viewModel = null;
 
-        public static ObservableCollection<ListEntry> ListEntries = null;
-
-        /// <summary>
-        /// A static ViewModel used by the views to bind against.
-        /// </summary>
-        /// <returns>The MainViewModel object.</returns>
-        public static MainViewModel ViewModel
-        {
-            get
-            {
-                // Delay creation of the view model until necessary
-                if (viewModel == null)
-                    viewModel = new MainViewModel();
-
-                return viewModel;
-            }
-        }
-
-        /// <summary>
-        /// Provides easy access to the root frame of the Phone Application.
-        /// </summary>
-        /// <returns>The root frame of the Phone Application.</returns>
+        // Easy access to the root frame
         public PhoneApplicationFrame RootFrame { get; private set; }
 
-        /// <summary>
-        /// Constructor for the Application object.
-        /// </summary>
+        // Constructor
         public App()
         {
             // Global handler for uncaught exceptions. 
+            // Note that exceptions thrown by ApplicationBarItem.Click will not get caught here.
             UnhandledException += Application_UnhandledException;
 
             // Standard Silverlight initialization
@@ -58,32 +33,6 @@
 
             // Phone-specific initialization
             InitializePhoneApplication();
-
-            // Show graphics profiling information while debugging.
-            if (System.Diagnostics.Debugger.IsAttached)
-            {
-                // Display the current frame rate counters
-                Application.Current.Host.Settings.EnableFrameRateCounter = true;
-
-                // Show the areas of the app that are being redrawn in each frame.
-                //Application.Current.Host.Settings.EnableRedrawRegions = true;
-
-                // Enable non-production analysis visualization mode, 
-                // which shows areas of a page that are handed off to GPU with a colored overlay.
-                //Application.Current.Host.Settings.EnableCacheVisualization = true;
-
-                // Disable the application idle detection by setting the UserIdleDetectionMode property of the
-                // application's PhoneApplicationService object to Disabled.
-                // Caution:- Use this under debug mode only. Application that disables user idle detection will continue to run
-                // and consume battery power when the user is not using the phone.
-                PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
-            }
-
-            // Initialises the static list in which the list entries are saved
-            if (App.ListEntries == null)
-            {
-                App.ListEntries = new ObservableCollection<ListEntry>();
-            }
         }
 
         // Code to execute when the application is launching (eg, from Start)
@@ -96,11 +45,6 @@
         // This code will not execute when the application is first launched
         private void Application_Activated(object sender, ActivatedEventArgs e)
         {
-            // Ensure that application state is restored appropriately
-            if (!App.ViewModel.IsDataLoaded)
-            {
-                App.ViewModel.LoadData();
-            }
         }
 
         // Code to execute when the application is deactivated (sent to background)
@@ -113,11 +57,10 @@
         // This code will not execute when the application is deactivated
         private void Application_Closing(object sender, ClosingEventArgs e)
         {
-            // Ensure that required application state is persisted here.
         }
 
         // Code to execute if a navigation fails
-        private void RootFrame_NavigationFailed(object sender, NavigationFailedEventArgs e)
+        void RootFrame_NavigationFailed(object sender, NavigationFailedEventArgs e)
         {
             if (System.Diagnostics.Debugger.IsAttached)
             {

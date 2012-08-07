@@ -19,6 +19,7 @@
     using System.Text.RegularExpressions;
     using SummerProjectWp7.BL;
     using SummerProjectWp7.UserExceptions;
+    using Coding4Fun.Phone.Controls;
 
     public partial class MainPage : PhoneApplicationPage
     {
@@ -138,7 +139,7 @@
         private void SaveNewEntry(object sender, EventArgs e)
         {
             // Hide message label and keyboard
-            this.msgLabelInput.Visibility = Visibility.Collapsed;
+            //this.msgLabelInput.Visibility = Visibility.Collapsed;
             this.Focus();
 
             // Get all values out of the input fields
@@ -153,7 +154,7 @@
             // Shows message in case of parsing error or if category is empty, does not continue with saving the entry
             if (!success || entry.Category == string.Empty)
             {
-                this.ShowMessage(this.msgLabelInput, "Please check amount", Colors.Red);
+                this.ShowMessage( "Please check amount", Colors.Red);
                 return;
             }
 
@@ -167,29 +168,33 @@
             }
             catch (ArgumentException ex)
             {
-                this.ShowMessage(this.msgLabelInput, ex.Message, Colors.Red);
+                this.ShowMessage(ex.Message, Colors.Red);
                 return;
             }
             catch (DataBaseException ex)
             {
-                this.ShowMessage(this.msgLabelInput, ex.Message, Colors.Red);
+                this.ShowMessage( ex.Message, Colors.Red);
                 return;
             }
 
             // Show success message
-            this.ShowMessage(this.msgLabelInput, "Successfully saved", Colors.Green);
+            this.ShowMessage("Successfully saved", Colors.Green);
         }
 
         /// <summary>
-        /// Shows a message in a given TextBlock
+        /// Shows a message in a toast notification
         /// </summary>
-        /// <param name="msg"></param>
+        /// <param name="msg">The message which shall be displayed</param>
         /// <param name="col"></param>
-        private void ShowMessage(TextBlock label, string msg, Color col)
+        private void ShowMessage(string msg, Color col)
         {
-            label.Foreground = new SolidColorBrush(col);
-            label.Text = msg;
-            label.Visibility = Visibility.Visible;
+            ToastPrompt toast = new ToastPrompt();
+            toast.Title = "Info";
+            toast.Message = msg;
+            toast.ImageSource = new BitmapImage(new Uri("ApplicationIcon.png", UriKind.RelativeOrAbsolute));
+            toast.Background = new SolidColorBrush(col);
+
+            toast.Show();
         }
 
         /// <summary>
