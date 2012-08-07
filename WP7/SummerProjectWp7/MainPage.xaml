@@ -45,7 +45,7 @@
                     <!--Stack Panel for Description-->
                     <StackPanel Name="descriptionPanel" Margin="0, 15, 0, 0">
                         <TextBlock HorizontalAlignment="Center">Description</TextBlock>
-                        <TextBox Name="descriptionTextBox"></TextBox>
+                        <TextBox Name="descriptionTextBox" KeyDown="HideKeyboard"></TextBox>
                     </StackPanel>
                     
                     <!--Stack Panel for Category - ListPicker in FullScreen mode only works with databinding!!-->

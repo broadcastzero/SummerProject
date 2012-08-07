@@ -240,5 +240,22 @@
                 this.lastMonthButton.IsChecked = true;
             }
         }
+
+        /// <summary>
+        /// Hides keyboard if "enter" is pressed
+        /// </summary>
+        /// <param name="sender">The sending control</param>
+        /// <param name="e">The KeyEventArgs</param>
+        private void HideKeyboard(object sender, KeyEventArgs e)
+        {
+            if (e.Key != Key.Enter)
+            {
+                return;
+            }
+            else
+            {
+                this.Focus();
+            }
+        }
     }
 }
