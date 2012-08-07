@@ -76,22 +76,25 @@
                         <ToggleButton Name="lastMonthButton" Click="ToggleMonth">Last Month</ToggleButton>
                         <ToggleButton Name="thisMonthButton" Click="ToggleMonth" IsChecked="True">This Month</ToggleButton>                        
                     </StackPanel>
-                    <StackPanel Name="listPanel">
-                        <ListBox x:Name="itemListBox">
-                            <ListBox.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel>                                        
-                                        <TextBlock Text="{Binding Path=Id}"></TextBlock>
-                                        <TextBlock Text="{Binding Path=Outgo}"></TextBlock>
-                                        <TextBlock Text="{Binding Path=Amount}"></TextBlock>
-                                        <TextBlock Text="{Binding Path=Description}"></TextBlock>
-                                        <TextBlock Text="{Binding Path=Category}"></TextBlock>
-                                        <TextBlock Text="{Binding Path=SaveDate}"></TextBlock>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </ListBox.ItemTemplate>
-                        </ListBox>
-                    </StackPanel>
+                    <Grid Grid.Row="1" Height="450">
+                        <ScrollViewer Grid.Row="1">
+                            <ListBox x:Name="itemListBox" Height="410">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding Path=Id}"></TextBlock>
+                                            <TextBlock Text="{Binding Path=Outgo}"></TextBlock>
+                                            <TextBlock Text="{Binding Path=Amount}"></TextBlock>
+                                            <TextBlock Text="{Binding Path=Description}"></TextBlock>
+                                            <TextBlock Text="{Binding Path=Category}"></TextBlock>
+                                            <TextBlock Text="{Binding Path=SaveDate}"></TextBlock>
+                                            <TextBlock Text="-------------------------"></TextBlock>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </ScrollViewer>
+                    </Grid>
                 </StackPanel>
             </controls:PivotItem>
 

@@ -36,17 +36,18 @@
         /*
          * Image resources for toggling the buttons
          */
+
         BitmapImage setAdd = new BitmapImage(
-                    new Uri("/Images/Add.png", UriKind.Relative));
+                    new Uri("/SummerProjectWp7;component/Images/Add.png", UriKind.Relative));
 
         BitmapImage setMinus = new BitmapImage(
-                    new Uri("/Images/Minus.png", UriKind.Relative));
+                    new Uri("/SummerProjectWp7;component/Images/Minus.png", UriKind.Relative));
 
         BitmapImage unsetAdd = new BitmapImage(
-            new Uri("/Images/Add_untoggled.png", UriKind.Relative));        
+            new Uri("/SummerProjectWp7;component/Images/Add_untoggled.png", UriKind.Relative));
 
         BitmapImage unsetMinus = new BitmapImage(
-            new Uri("/Images/Minus_untoggled.png", UriKind.Relative));
+            new Uri("/SummerProjectWp7;component/Images/Minus_untoggled.png", UriKind.Relative));
 
         // Constructor
         public MainPage()
@@ -55,20 +56,21 @@
 
             // Set the data context of the category combobox
             DataContext = App.ViewModel;
+
             this.Loaded += new RoutedEventHandler(MainPage_Loaded);
         }
 
         // Logic which is run when user navigates to MainPage
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            base.OnNavigatedTo(e);
-
             // in case that HomeScreen shall be shown with minus toggled first, change images
             if (MainPage.minusToggled)
             {
                 this.addImg.Source = this.unsetAdd;
                 this.minusImg.Source = this.setMinus;
             }
+
+            base.OnNavigatedTo(e);
         }
 
         // Load data for the ViewModel Items
