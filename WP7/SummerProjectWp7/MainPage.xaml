@@ -64,6 +64,7 @@
                             </toolkit:ListPicker.FullModeItemTemplate>
                         </toolkit:ListPicker>
                     </StackPanel>
+
                 </StackPanel>
             </controls:PivotItem>
 
@@ -72,8 +73,23 @@
                 <StackPanel>
                     <StackPanel Name="monthSelectorPanel" Orientation="Horizontal" HorizontalAlignment="Center">
                         <ToggleButton Name="lastMonthButton" Click="ToggleMonth">Last Month</ToggleButton>
-                        <ToggleButton Name="thisMonthButton" Click="ToggleMonth" IsChecked="True">This Month</ToggleButton>
-                        
+                        <ToggleButton Name="thisMonthButton" Click="ToggleMonth" IsChecked="True">This Month</ToggleButton>                        
+                    </StackPanel>
+                    <StackPanel Name="listPanel">
+                        <ListBox x:Name="itemListBox">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Path=Id}"></TextBlock>
+                                        <TextBlock Text="{Binding Path=Outgo}"></TextBlock>
+                                        <TextBlock Text="{Binding Path=Amount}"></TextBlock>
+                                        <TextBlock Text="{Binding Path=Description}"></TextBlock>
+                                        <TextBlock Text="{Binding Path=Category}"></TextBlock>
+                                        <TextBlock Text="{Binding Path=SaveDate}"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
                     </StackPanel>
                 </StackPanel>
             </controls:PivotItem>

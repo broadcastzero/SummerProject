@@ -12,18 +12,19 @@
     using System.Windows.Shapes;
     using SummerProjectWp7.DAL;
     using SummerProjectWp7.UserExceptions;
+using System.Collections.Generic;
 
     /// <summary>
     /// This class is responsible for managing and updating the list view. 
     /// It gets values out of the database and fills and refreshes the list.
     /// </summary>
-    public class ListEntryManager
+    public class ListItemManager
     {
         /// <summary>
         /// Validates the entry params and sends the business object to the DAL
         /// </summary>
         /// <param name="entry"></param>
-        public void SaveNewEntry(ListItemClass entry)
+        public void SaveNewEntry(ListItemClass entry, ListBox listbox)
         {
             // instance of argument provided?
             if (entry == null)
@@ -53,15 +54,18 @@
             // save to database
             DataBaseManager manager = new DataBaseManager();
             manager.AddItem(entry);
+
+            listbox.ItemsSource = manager.GetItems();
         }
 
         /// <summary>
         /// Refreshes the list view.
         /// </summary>
         /// <param name="month">The month which shall be loaded (this month - param)</param>
-        public void RefreshList(int month)
+        public IList<ListItemClass> RefreshList(int month)
         {
-            throw new NotImplementedException();
+            DataBaseManager dbm = new DataBaseManager();
+            return dbm.GetItems();
         }
     }
 }

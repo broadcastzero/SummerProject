@@ -97,7 +97,11 @@
                 toast.Message = "not first run - no database created";
 
                 toast.Show();
-            }            
+            }
+
+            // Load data to list
+            ListItemManager manager = new ListItemManager();
+            this.itemListBox.ItemsSource = manager.RefreshList(0);
         }
 
         /// <summary>
@@ -187,8 +191,8 @@
             // Save new entry and show success or error message
             try
             {
-                ListEntryManager manager = new ListEntryManager();
-                manager.SaveNewEntry(entry);
+                ListItemManager manager = new ListItemManager();
+                manager.SaveNewEntry(entry, this.itemListBox);
             }
             catch (ArgumentException ex)
             {
@@ -245,7 +249,7 @@
                 this.thisMonthButton.IsChecked = true;
 
                 // refresh list
-                ListEntryManager lm = new ListEntryManager();
+                ListItemManager lm = new ListItemManager();
                 lm.RefreshList(1);
             }
             // toggle last month button
@@ -255,7 +259,7 @@
                 this.thisMonthButton.IsChecked = false;
 
                 // refresh list
-                ListEntryManager lm = new ListEntryManager();
+                ListItemManager lm = new ListItemManager();
                 lm.RefreshList(0);
             }
             // do not untoggle this month if toggled
