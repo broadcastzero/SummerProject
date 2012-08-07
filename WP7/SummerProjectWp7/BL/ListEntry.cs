@@ -44,5 +44,11 @@
         /// Gets or sets the name of the category
         /// </summary>
         public string Category { get; set; }
+
+        private DateTime saveDate = DateTime.Now;
+        /// <summary>
+        /// Gets or sets the date when the item was saved.
+        /// </summary>
+        public DateTime SaveDate { get { return this.saveDate; } }
     }
 }
