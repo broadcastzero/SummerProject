@@ -10,6 +10,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="696"
+    xmlns:bl="clr-namespace:SummerProjectWp7.BL"
     FontFamily="{StaticResource PhoneFontFamilyNormal}"
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
@@ -79,7 +80,7 @@
                         <ListBox x:Name="itemListBox">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
-                                    <StackPanel>
+                                    <StackPanel>                                        
                                         <TextBlock Text="{Binding Path=Id}"></TextBlock>
                                         <TextBlock Text="{Binding Path=Outgo}"></TextBlock>
                                         <TextBlock Text="{Binding Path=Amount}"></TextBlock>

@@ -171,9 +171,10 @@
 
             // Get all values out of the input fields
             ListItemClass entry = new ListItemClass();
-            
+            CategoryViewModel model = this.categoryListPicker.SelectedItem as CategoryViewModel;
+
             entry.Outgo = MainPage.minusToggled;
-            entry.Category = this.categoryListPicker.SelectedItem.ToString();
+            entry.Category = model.Category;
             entry.Description = this.descriptionTextBox.Text;
             
             double output;
