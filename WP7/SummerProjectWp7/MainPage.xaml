@@ -76,22 +76,31 @@
                         <ToggleButton Name="lastMonthButton" Click="ToggleMonth">Last Month</ToggleButton>
                         <ToggleButton Name="thisMonthButton" Click="ToggleMonth" IsChecked="True">This Month</ToggleButton>                        
                     </StackPanel>
-                    <Grid Grid.Row="1" Height="450">
-                        <ScrollViewer Grid.Row="1">
+                    <Grid Grid.Row="2" Height="450">
+                        <ListBox x:Name="itemHeaderListBox" Grid.Row="1" Margin="0,0,0,10">
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <StackPanel Orientation="Horizontal" />
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
+                            <!--<ListBoxItem>ID</ListBoxItem>-->
+                            <ListBoxItem Margin="10,0,0,0">Out?</ListBoxItem>
+                            <ListBoxItem Margin="10,0,0,0" Width="53" HorizontalAlignment="Center">€</ListBoxItem>
+                            <ListBoxItem Margin="10,0,0,0" Width="110">Descr.</ListBoxItem>
+                            <ListBoxItem Margin="10,0,0,0" Width="82">Category</ListBoxItem>
+                            <ListBoxItem Margin="10,0,0,0" Width="60" HorizontalAlignment="Center">Date</ListBoxItem>
+                        </ListBox>
+                        <ScrollViewer Grid.Row="2">
                             <ListBox x:Name="itemListBox" Height="410">
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
-                                        <StackPanel>
-                                            <TextBlock Text="{Binding Path=Id}"></TextBlock>
-                                            <StackPanel Orientation="Horizontal">
-                                                <TextBlock VerticalAlignment="Center">Outgo?</TextBlock>
-                                                <CheckBox IsChecked="{Binding Path=Outgo}" IsEnabled="False"></CheckBox>
-                                            </StackPanel>
-                                                <TextBlock Text="{Binding Path=Amount}"></TextBlock>
-                                            <TextBlock Text="{Binding Path=Description}"></TextBlock>
-                                            <TextBlock Text="{Binding Path=Category}"></TextBlock>
-                                            <TextBlock Text="{Binding Path=SaveDate}"></TextBlock>
-                                            <TextBlock Text="-------------------------"></TextBlock>
+                                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                            <!--<TextBlock Text="{Binding Path=Id}" />-->
+                                            <CheckBox IsChecked="{Binding Path=Outgo}" IsEnabled="False" VerticalAlignment="Top" />
+                                            <TextBlock Text="{Binding Path=Amount}" VerticalAlignment="Center" HorizontalAlignment="Center" Width="53" />
+                                            <TextBlock Text="{Binding Path=Description}" Margin="10,0,0,0" VerticalAlignment="Center" Width="110" />
+                                            <TextBlock Text="{Binding Path=Category}" Margin="10,0,0,0" VerticalAlignment="Center" Width="82" />
+                                            <TextBlock Text="{Binding Path=SaveDate, StringFormat=dd.MM}" Margin="10,0,0,0" VerticalAlignment="Center" Width="60" />
                                         </StackPanel>
                                     </DataTemplate>
                                 </ListBox.ItemTemplate>

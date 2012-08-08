@@ -49,7 +49,7 @@ using System.Collections.Generic;
             }
 
             // add current datetime
-            entry.SaveDate = DateTime.Now;
+            entry.SaveDate = DateTime.Today;
 
             // save to database
             DataBaseManager manager = new DataBaseManager();
