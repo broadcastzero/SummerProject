@@ -83,8 +83,11 @@
                                     <DataTemplate>
                                         <StackPanel>
                                             <TextBlock Text="{Binding Path=Id}"></TextBlock>
-                                            <TextBlock Text="{Binding Path=Outgo}"></TextBlock>
-                                            <TextBlock Text="{Binding Path=Amount}"></TextBlock>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock VerticalAlignment="Center">Outgo?</TextBlock>
+                                                <CheckBox IsChecked="{Binding Path=Outgo}" IsEnabled="False"></CheckBox>
+                                            </StackPanel>
+                                                <TextBlock Text="{Binding Path=Amount}"></TextBlock>
                                             <TextBlock Text="{Binding Path=Description}"></TextBlock>
                                             <TextBlock Text="{Binding Path=Category}"></TextBlock>
                                             <TextBlock Text="{Binding Path=SaveDate}"></TextBlock>
