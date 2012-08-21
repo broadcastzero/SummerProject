@@ -55,17 +55,17 @@ using System.Collections.Generic;
             DataBaseManager manager = new DataBaseManager();
             manager.AddItem(entry);
 
-            listbox.ItemsSource = manager.GetItems();
+            listbox.ItemsSource = manager.GetItems(DateTime.Now.Month);
         }
 
         /// <summary>
         /// Refreshes the list view.
         /// </summary>
         /// <param name="month">The month which shall be loaded (this month - param)</param>
-        public IList<ListItemClass> RefreshList(int month)
+        public void RefreshList(ListBox listbox, int month)
         {
             DataBaseManager dbm = new DataBaseManager();
-            return dbm.GetItems();
+            listbox.ItemsSource = dbm.GetItems(month);
         }
     }
 }

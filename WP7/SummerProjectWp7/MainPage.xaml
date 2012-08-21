@@ -15,7 +15,7 @@
     FontSize="{StaticResource PhoneFontSizeNormal}"
     Foreground="{StaticResource PhoneForegroundBrush}"
     SupportedOrientations="Portrait"  Orientation="Portrait"
-    shell:SystemTray.IsVisible="True" DataContext="{Binding}">
+    shell:SystemTray.IsVisible="True" DataContext="{Binding}" xmlns:my="clr-namespace:System;assembly=mscorlib">
     
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot" Background="Transparent">
@@ -73,8 +73,22 @@
             <controls:PivotItem Header="List">
                 <StackPanel>
                     <StackPanel Name="monthSelectorPanel" Orientation="Horizontal" HorizontalAlignment="Center">
-                        <ToggleButton Name="lastMonthButton" Click="ToggleMonth">Last Month</ToggleButton>
-                        <ToggleButton Name="thisMonthButton" Click="ToggleMonth" IsChecked="True">This Month</ToggleButton>                        
+                        <toolkit:ListPicker Name="monthPicker" Width="300" Margin="0,0,0,10" ExpansionMode="FullScreenOnly" SelectionChanged="ShowSelectedMonth">
+                            <toolkit:ListPicker.ItemTemplate>
+                                <DataTemplate>
+                                    <toolkit:ListPickerItem Content="{Binding Name}" FontSize="29" />
+                                </DataTemplate>
+                            </toolkit:ListPicker.ItemTemplate>
+                            <toolkit:ListPicker.FullModeItemTemplate>
+                                <DataTemplate>
+                                    <toolkit:ListPickerItem Content="{Binding Name}" FontSize="27"/>
+                                </DataTemplate>
+                            </toolkit:ListPicker.FullModeItemTemplate>
+                        </toolkit:ListPicker>
+                        <!-- TOGGLE BUTTONS
+                            <ToggleButton Name="lastMonthButton" Click="ToggleMonth">Last Month</ToggleButton>
+                            <ToggleButton Name="thisMonthButton" Click="ToggleMonth" IsChecked="True">This Month</ToggleButton>
+                        -->
                     </StackPanel>
                     <Grid Grid.Row="2" Height="450">
                         <ListBox x:Name="itemHeaderListBox" Grid.Row="1" Margin="0,0,0,10">
@@ -91,7 +105,7 @@
                             <ListBoxItem Margin="10,0,0,0" Width="60" HorizontalAlignment="Center">Date</ListBoxItem>
                         </ListBox>
                         <ScrollViewer Grid.Row="2">
-                            <ListBox x:Name="itemListBox" Height="410">
+                            <ListBox x:Name="itemListBox" Height="410" Margin="0,20,0,0">
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center">

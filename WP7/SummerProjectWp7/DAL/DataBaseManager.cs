@@ -48,13 +48,16 @@
         /// Gets all ListItems from the database
         /// </summary>
         /// <returns></returns>
-        public IList<ListItemClass> GetItems()
+        public IList<ListItemClass> GetItems(int month)
         {
             List<ListItemClass> items = new List<ListItemClass>();
             using (var db = new ListItemContext(ConnectionString))
             {
                 var query = from e in db.ListItems
-                            select e;
+                            where e.SaveDate.Month == month
+                            orderby e.SaveDate descending
+                            select e
+                            ;
                 items = query.ToList();
             }
 

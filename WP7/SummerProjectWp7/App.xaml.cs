@@ -22,7 +22,7 @@
     using System.IO.IsolatedStorage;
 
     public partial class App : Application
-    {
+    {        
         private static MainViewModel viewModel = null;
         
         //public static ObservableCollection<ListItemClass> ListEntries = null;

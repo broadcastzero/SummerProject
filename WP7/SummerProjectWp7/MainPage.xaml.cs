@@ -70,6 +70,10 @@
                 this.minusImg.Source = this.setMinus;
             }
 
+            // Load data to list
+            //ListItemManager manager = new ListItemManager();
+            //manager.RefreshList(this.itemListBox, DateTime.Now.Month);
+
             base.OnNavigatedTo(e);
         }
 
@@ -79,31 +83,11 @@
             if (!App.ViewModel.IsDataLoaded)
             {
                 App.ViewModel.LoadData();
+                this.monthPicker.ItemsSource = MainViewModel.MonthList;
+                this.monthPicker.SelectedIndex = DateTime.Now.Month - 1;
             }
 
-            // First run? Create database!
-            IsolatedStorageSettings userSettings = IsolatedStorageSettings.ApplicationSettings;
-            // Set if this is the first run of the application or not
-            if ((bool)userSettings["firstRun"] == true)
-            {
-                ToastPrompt toast = new ToastPrompt();
-                toast.Title = "Info";
-                toast.Message = "first run - database created";
-
-                toast.Show();
-            }
-            else
-            {
-                ToastPrompt toast = new ToastPrompt();
-                toast.Title = "Info";
-                toast.Message = "not first run - no database created";
-
-                toast.Show();
-            }
-
-            // Load data to list
-            ListItemManager manager = new ListItemManager();
-            this.itemListBox.ItemsSource = manager.RefreshList(0);
+            //IsolatedStorageSettings userSettings = IsolatedStorageSettings.ApplicationSettings;
         }
 
         /// <summary>
@@ -196,6 +180,9 @@
             {
                 ListItemManager manager = new ListItemManager();
                 manager.SaveNewEntry(entry, this.itemListBox);
+
+                // select current month after saving
+                this.monthPicker.SelectedIndex = DateTime.Now.Month - 1;
             }
             catch (ArgumentException ex)
             {
@@ -243,7 +230,7 @@
         /// </summary>
         /// <param name="sender">The sending ToggleButton</param>
         /// <param name="e">The event args</param>
-        private void ToggleMonth(object sender, RoutedEventArgs e)
+        /*private void ToggleMonth(object sender, RoutedEventArgs e)
         {
             // toggle this month, untoggle last month
             if (this.lastMonthButton.IsChecked.GetValueOrDefault() && (sender as ToggleButton).Name == "thisMonthButton")
@@ -275,7 +262,7 @@
             {
                 this.lastMonthButton.IsChecked = true;
             }
-        }
+        }*/
 
         /// <summary>
         /// Hides keyboard if "enter" is pressed
@@ -292,6 +279,12 @@
             {
                 this.Focus();
             }
+        }
+
+        private void ShowSelectedMonth(object sender, SelectionChangedEventArgs e)
+        {
+            ListItemManager manager = new ListItemManager();
+            manager.RefreshList(this.itemListBox, this.monthPicker.SelectedIndex + 1);
         }
     }
 }

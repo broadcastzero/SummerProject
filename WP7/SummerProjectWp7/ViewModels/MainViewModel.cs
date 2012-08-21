@@ -14,18 +14,22 @@
     using System.Windows.Media.Imaging;
     using System.Windows.Shapes;
     using System.Collections.ObjectModel;
+    using SummerProjectWp7.BL;
 
     public class MainViewModel : INotifyPropertyChanged
     {
         public MainViewModel()
         {
             MainViewModel.CategoryList = new ObservableCollection<CategoryViewModel>();
+            MainViewModel.MonthList = new List<Month>();
         }
 
         /// <summary>
         /// A collection for CategoryViewModel objects.
         /// </summary>
         public static ObservableCollection<CategoryViewModel> CategoryList { get; private set; }
+
+        public static List<Month> MonthList { get; private set; }
 
         public bool IsDataLoaded
         {
@@ -41,6 +45,20 @@
             // Sample data; replace with real data
             MainViewModel.CategoryList.Add(new CategoryViewModel() { Category = "Food" });
             MainViewModel.CategoryList.Add(new CategoryViewModel() { Category = "Beer" });
+
+            // Load months            
+            MainViewModel.MonthList.Add(new Month { Number = 1, Name = "January" });
+            MainViewModel.MonthList.Add(new Month { Number = 2, Name = "February" });
+            MainViewModel.MonthList.Add(new Month { Number = 3, Name = "March" });
+            MainViewModel.MonthList.Add(new Month { Number = 4, Name = "April" });
+            MainViewModel.MonthList.Add(new Month { Number = 5, Name = "May" });
+            MainViewModel.MonthList.Add(new Month { Number = 6, Name = "June" });
+            MainViewModel.MonthList.Add(new Month { Number = 7, Name = "July" });
+            MainViewModel.MonthList.Add(new Month { Number = 8, Name = "August" });
+            MainViewModel.MonthList.Add(new Month { Number = 9, Name = "September" });
+            MainViewModel.MonthList.Add(new Month { Number = 10, Name = "October" });
+            MainViewModel.MonthList.Add(new Month { Number = 11, Name = "November" });
+            MainViewModel.MonthList.Add(new Month { Number = 12, Name = "December" });
 
             this.IsDataLoaded = true;
         }

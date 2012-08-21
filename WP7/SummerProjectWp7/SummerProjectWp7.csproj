@@ -73,6 +73,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BL\Month.cs" />
     <Compile Include="BL\ListItemManager.cs" />
     <Compile Include="BL\ListItemModel.cs" />
     <Compile Include="DAL\DataBaseManager.cs" />
